@@ -4,10 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Clínica Fiorella: diagnóstico de captación de pacientes</title>
-<meta name="description" content="Su anuncio de bio lifting está activo y el botón de WhatsApp de su página no abre conversación. Lo que encontramos al revisar 39 clínicas de Tijuana que pagan anuncios en Meta.">
+<link rel="icon" href="brand/favicon.png" type="image/png">
+<meta name="description" content="Su anuncio corre todos los días y no lleva a ningún sitio suyo. Lo que encontramos al revisar 39 clínicas de Tijuana que pagan anuncios en Meta.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Clínica Fiorella: diagnóstico de captación de pacientes">
-<meta property="og:description" content="El clic está pagado. La conversación no empieza. Lo que encontramos al revisar 39 clínicas de Tijuana.">
+<meta property="og:description" content="Su anuncio corre todos los días y no lleva a ningún sitio suyo.">
+<meta property="og:image" content="brand/lockup.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f7f4f0">
 <meta name="site-kind" content="other">
@@ -41,68 +43,80 @@
 <link rel="modulepreload" href="assets/moments/lib.js">
 <link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
 <style>
+  /* content sits where the eye lands: top-left of its screen, never centred */
+  main > section > .wrap { align-content: start; align-items: start; padding-top: var(--s-8); }
+  .brand-mark { display: block; width: 26px; height: auto; }
+  .nav__logo { display: inline-flex; align-items: center; gap: var(--s-3); }
+  .footer__brand { display: block; }
+  .footer__brand img { width: 34px; height: auto; display: block; margin-bottom: var(--s-3); }
+  footer.closing > .wrap { padding-top: var(--s-6); padding-bottom: var(--s-6); }
+  .lead-note { color: var(--p-ink); max-width: 46ch; margin-top: var(--s-5); }
   .flow { display: grid; gap: 0; align-content: start; }
   .flow__step { display: grid; grid-template-columns: 2.25rem 1fr; gap: 0 var(--s-4); padding: var(--s-6) 0; border-top: 1px solid color-mix(in oklab, var(--p-ink) 14%, transparent); }
   .flow__step:first-child { border-top: 0; }
-  .flow__n { font-variant-numeric: tabular-nums; color: var(--p-ink); font-size: 14px; padding-top: 3px; }
-  .flow__step b { font-weight: 500; display: block; }
-  .flow__step span.flow__t { color: var(--p-ink); font-size: 15px; }
-  #mercado .bars { display: grid; align-content: center; gap: var(--s-6); padding: var(--s-7) var(--s-6); min-height: 340px; }
-  #mercado .bar b { display: block; font-family: var(--font-display); font-weight: 400; font-size: 34px; line-height: 1; letter-spacing: -0.03em; }
-  #mercado .bar i { display: block; height: 10px; margin: var(--s-3) 0 var(--s-2); background: color-mix(in oklab, var(--p-ink) 16%, transparent); }
-  #mercado .bar i::after { content: ""; display: block; height: 100%; width: var(--v); background: var(--p-ink); }
-  #mercado .bar--accent b { color: var(--p-accent); }
-  #mercado .bar--accent i::after { background: var(--p-accent); }
-  #mercado .bar em { font-style: normal; display: block; color: var(--p-ink); font-size: 15px; }
-  @media (max-width: 1023px) { #mercado .bar b { font-size: 28px; } #mercado .panel.bars { padding-left: 0; padding-right: 0; background: none; border: 0; } }
-  @media (min-width: 1024px) { #hallazgo > .wrap { padding-top: 200px; align-items: start; } }
-  @media (min-width: 640px) and (max-width: 1023px) { #hallazgo > .wrap { padding-top: 150px; align-items: start; } }
-  @media (max-width: 639px) { #hallazgo > .wrap { align-items: start; align-content: start; padding-top: 0; } #hallazgo .panel.path { gap: var(--s-4); } #hallazgo .path__s { padding-top: var(--s-4); } }
-  @media (max-width: 639px) {
-    .hero--statement .hero__in { display: flex; flex-direction: column; height: 100%; }
-    .hero--statement .hero__facts { margin-top: auto; }
+  .flow__n { font-variant-numeric: tabular-nums; color: var(--p-ink); font-size: 14px; padding-top: 4px; }
+  .flow__step b { font-weight: 500; display: block; font-size: 17px; }
+  .flow__step span.flow__t { color: var(--p-ink); font-size: 16px; }
+  .panel { min-height: 460px; align-content: center; }
+  /* the hero's fact row runs the full container, like every other row */
+  .hero--statement .hero-text { max-width: 620px; }
+  /* the fact row stays inside the hero's text column, so it sits on that column's lines */
+  .hero__facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  @media (max-width: 767px) { .hero__facts { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  #sitio .bars { display: grid; align-content: center; gap: var(--s-6); padding: var(--s-7) var(--s-6); }
+  #sitio .bar b { display: block; font-family: var(--font-display); font-weight: 400; font-size: 36px; line-height: 1; letter-spacing: -0.03em; }
+  #sitio .bar i { display: block; height: 10px; margin: var(--s-3) 0 var(--s-2); background: color-mix(in oklab, var(--p-ink) 16%, transparent); }
+  #sitio .bar i::after { content: ""; display: block; height: 100%; width: var(--v); background: var(--p-ink); }
+  #sitio .bar--accent b { color: var(--p-accent); }
+  #sitio .bar--accent i::after { background: var(--p-accent); }
+  #sitio .bar em { font-style: normal; display: block; color: var(--p-ink); font-size: 16px; }
+  .hero__facts dd .no { color: var(--p-accent); }
+  #boton .panel.path { display: grid; grid-template-columns: 1fr; gap: 0; align-content: center; padding: var(--s-7) var(--s-6); }
+  #boton .path__s { display: grid; align-content: start; gap: var(--s-2); padding: var(--s-5) 0 var(--s-5) var(--s-6); border-top: 1px solid color-mix(in oklab, var(--p-ink) 14%, transparent); position: relative; }
+  #boton .path__s:first-child { border-top: 0; }
+  #boton .path__d { position: absolute; top: calc(var(--s-5) + 6px); left: 0; width: 10px; height: 10px; background: var(--p-ink); }
+  #boton .path__s b { font-weight: 500; font-size: 17px; }
+  #boton .path__s em { font-style: normal; color: var(--p-ink); font-size: 16px; }
+  #boton .path__s--dead .path__d { background: var(--p-accent); }
+  #boton .path__s--dead b { color: var(--p-accent); }
+  @media (max-width: 1023px) {
+    #sitio .bar b { font-size: 28px; }
+    .panel { min-height: 0; }
+    #sitio .panel.bars, #boton .panel.path, #propuesta .panel.flow { padding-left: 0; padding-right: 0; background: none; border: 0; }
   }
+  @media (max-width: 639px) { main > section > .wrap { padding-top: var(--s-6); } }
   @media (max-width: 400px) {
-    .nav__bar { gap: var(--s-2); }
-    .nav__logo { font-size: 15px; }
-    .nav__logo .mark { width: 16px; height: 16px; }
-    .nav__actions .btn { padding-inline: var(--s-2); font-size: 12px; }
+    .nav__bar { gap: 4px; }
+    .nav__logo { font-size: 13px; gap: 6px; }
+    .brand-mark { width: 19px; }
+    .nav__actions .btn { padding-inline: 6px; font-size: 11px; }
     .nav__toggle { margin-inline-end: 0; flex: 0 0 auto; }
     .closing__cta .btn { max-width: 100%; white-space: normal; height: auto; min-height: 44px; padding-block: var(--s-3); }
-    .closing__links .grid > * { min-width: 0; }
     .footer__lede, .footer__legal span { overflow-wrap: anywhere; }
   }
-  #hallazgo .panel.path { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-5); align-content: center; min-height: 340px; padding: var(--s-7) var(--s-6); }
-  #hallazgo .path__s { display: grid; align-content: start; gap: var(--s-2); position: relative; padding-top: var(--s-5); }
-  #hallazgo .path__d { position: absolute; top: 0; left: 0; width: 11px; height: 11px; background: var(--p-ink); }
-  #hallazgo .path__s::before { content: ""; position: absolute; top: 5px; left: 11px; right: calc(var(--s-5) * -1); height: 1px; background: color-mix(in oklab, var(--p-ink) 22%, transparent); }
-  #hallazgo .path__s:last-child::before { display: none; }
-  #hallazgo .path__s b { font-weight: 500; font-size: 17px; }
-  #hallazgo .path__s em { font-style: normal; color: var(--p-ink); font-size: 15px; }
-  #hallazgo .path__s--dead .path__d { background: var(--p-accent); }
-  #hallazgo .path__s--dead b { color: var(--p-accent); }
-  @media (max-width: 1023px) { #hallazgo .panel.path { grid-template-columns: 1fr; padding-left: 0; padding-right: 0; background: none; border: 0; min-height: 0; } #hallazgo .path__s::before { display: none; } }
 </style>
 </head>
 <body>
 <!-- type: service
      deal: hero statement (re-dealt: no photographs), nav nav-split, close close-type,
-     footer footer-dark, rhythm surface-pairs, buttons block, mark arc, grounds none
+     footer footer-dark, rhythm surface-pairs, buttons block, mark the client's own logo
      moments: word-highlight in #creencia
-     Every figure comes from the sheet "Tijuana clinics running Meta ads" (Leo's own research).
+     Order set by the client: the missing website first (greater pain), the broken button second.
+     The proposal is written as a proposal: nothing says the work is under way.
+     Every figure comes from the sheet "Tijuana clinics running Meta ads".
      Contact is a .example stand-in: swap in the real WhatsApp link before sending. -->
 
 <header class="nav nav--split">
   <div class="wrap nav__bar">
     <a class="skip-link" href="#top">Ir al contenido</a>
-    <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>Meridian</a>
+    <a class="nav__logo" href="#top"><img class="brand-mark" src="brand/mark.png" alt="" width="256" height="200">Meridian</a>
     <nav class="nav__links" aria-label="Principal">
-      <div class="nav__item"><a class="nav__link" href="#hallazgo">El hallazgo</a></div>
-      <div class="nav__item"><a class="nav__link" href="#mercado">Las 39 clínicas</a></div>
-      <div class="nav__item"><a class="nav__link" href="#plan">Qué haríamos</a></div>
+      <div class="nav__item"><a class="nav__link" href="#sitio">El sitio</a></div>
+      <div class="nav__item"><a class="nav__link" href="#boton">El botón</a></div>
+      <div class="nav__item"><a class="nav__link" href="#propuesta">La propuesta</a></div>
     </nav>
     <div class="nav__actions">
-      <a class="btn btn--primary" href="#contacto">Agendar la llamada</a>
+      <a class="btn btn--primary" href="#contacto">Pedir la propuesta</a>
     </div>
     <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menú"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
   </div>
@@ -114,80 +128,84 @@
       <div>
         <p class="t-label">Diagnóstico para Clínica Fiorella</p>
         <h1 id="hero-h">Diagnóstico de captación de pacientes para Clínica Fiorella</h1>
-        <p class="hero__lead">Su anuncio de bio lifting a $699 está activo desde el 5 de noviembre. El botón de WhatsApp de su página no abre una conversación: los clics que ya pagó terminan en un error.</p>
-        <div class="btn-row"><a class="btn btn--primary" href="#contacto">Agendar la llamada de 15 minutos</a><a class="btn btn--secondary" href="#hallazgo">Ver el hallazgo</a></div>
+        <p class="hero__lead">Su anuncio de bio lifting corre desde el 5 de noviembre y no lleva a ningún sitio suyo. Quien quiere saber más llega a Facebook, y ahí el botón de WhatsApp no abre.</p>
+        <div class="btn-row"><a class="btn btn--primary" href="#contacto">Pedir la propuesta</a><a class="btn btn--secondary" href="#sitio">Ver el diagnóstico</a></div>
       </div>
       <dl class="hero__facts">
-        <div><dt>Anuncio activo desde</dt><dd>5 de noviembre</dd></div>
-        <div><dt>Seguidores en Facebook</dt><dd>7,500</dd></div>
-        <div><dt>Botón de WhatsApp</dt><dd>No abre conversación</dd></div>
-        <div><dt>Sitio web</dt><dd>Ninguno</dd></div>
+        <div><dt>Sitio web</dt><dd><span class="no">Ninguno</span></dd></div>
+        <div><dt>Botón de WhatsApp</dt><dd>No abre</dd></div>
+        <div><dt>Anuncio desde</dt><dd>5 de noviembre</dd></div>
       </dl>
     </div></div>
   </section>
 
-  <section class="section" id="hallazgo" style="--h: 1" aria-labelledby="hallazgo-h">
-    <div class="wrap grid grid--middle">
+  <section class="section" id="sitio" style="--h: 1" aria-labelledby="sitio-h">
+    <div class="wrap grid">
       <div class="span-5">
         <div class="section-head">
-          <h2 id="hallazgo-h">El clic está pagado. La conversación no empieza. <span class="muted">Revisamos su página como lo haría una paciente.</span></h2>
+          <h2 id="sitio-h">Paga visitas que no tienen a dónde llegar. <span class="muted">La clínica no tiene sitio web.</span></h2>
+        </div>
+        <ul class="checks">
+          <li>El anuncio se paga por clic, todos los días</li>
+          <li>La paciente llega a Facebook, no a la clínica</li>
+          <li>No hay dónde leer precios, nombres ni resultados</li>
+          <li>Nada de eso queda a nombre de usted: queda a nombre de Meta</li>
+        </ul>
+        <p class="t-lead lead-note">Entre todas las clínicas que revisamos corren 57 anuncios activos. La mayoría gasta igual que usted y tampoco tiene a dónde mandar a la gente.</p>
+      </div>
+      <div class="span-6 start-7">
+        <div class="panel bars" data-visual role="img" aria-label="De 39 clínicas de Tijuana que pagan anuncios en Meta, 77% no tiene un sitio web utilizable, 41% no publica con regularidad y 10% paga anuncios con el botón de WhatsApp roto.">
+          <div class="bar bar--accent"><b>77%</b><i style="--v: 77%"></i><em>No tiene un sitio web utilizable (30 de 39). Veintitrés no tienen ninguno.</em></div>
+          <div class="bar"><b>41%</b><i style="--v: 41%"></i><em>No publica con regularidad (16 de 39)</em></div>
+          <div class="bar"><b>10%</b><i style="--v: 10%"></i><em>Paga anuncios con el botón de WhatsApp roto (4 de 39)</em></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="boton" style="--h: 1" aria-labelledby="boton-h">
+    <div class="wrap grid">
+      <div class="span-5">
+        <div class="section-head">
+          <h2 id="boton-h">Y el camino que sí existe está roto. <span class="muted">Lo revisamos como una paciente.</span></h2>
         </div>
         <ul class="checks">
           <li>Su anuncio corre y la gente da clic</li>
           <li>El botón de WhatsApp no abre conversación</li>
           <li>Meta cobra ese clic igual</li>
+          <li>La clínica nunca ve el mensaje que no llegó</li>
         </ul>
-        <p class="t-lead">Su página tiene 7,500 seguidores y el anuncio lleva un precio. Eso produce mensajes todos los días. El botón decide cuántos llegan a una conversación.</p>
+        <p class="t-lead lead-note">Su página tiene 7,500 seguidores y el anuncio lleva un precio. Eso produce mensajes todos los días. El botón decide cuántos llegan a una conversación.</p>
       </div>
       <div class="span-6 start-7">
         <div class="panel path" data-visual role="img" aria-label="Una paciente ve el anuncio, da clic para escribir y el botón no abre conversación: ahí termina y se va con otra clínica.">
-          <div class="path__s"><span class="path__d"></span><b>Ve el anuncio</b><em>Bio lifting</em></div>
+          <div class="path__s"><span class="path__d"></span><b>Ve el anuncio</b><em>Bio lifting, con precio</em></div>
           <div class="path__s"><span class="path__d"></span><b>Da clic para escribir</b><em>Enviar mensaje</em></div>
-          <div class="path__s path__s--dead"><span class="path__d"></span><b>El botón no abre</b><em>Ahí termina</em></div>
+          <div class="path__s path__s--dead"><span class="path__d"></span><b>El botón no abre</b><em>Ahí termina. Se va con la siguiente clínica.</em></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt" id="mercado" style="--h: 1" aria-labelledby="mercado-h">
-    <div class="wrap grid grid--middle">
+  <section class="section" id="propuesta" style="--h: 1; --hm: 2" aria-labelledby="propuesta-h">
+    <div class="wrap grid">
       <div class="span-5">
         <div class="section-head">
-          <h2 id="mercado-h">Su caso entre 39 clínicas de Tijuana. <span class="muted">Revisamos una por una las que pagan anuncios en Meta.</span></h2>
-        </div>
-        <p class="t-lead">Entre todas corren 57 anuncios activos. El gasto sale todos los días; la conversación se pierde en el último paso.</p>
-      </div>
-      <div class="span-6 start-7">
-        <div class="panel bars" data-visual role="img" aria-label="De 39 clínicas de Tijuana que pagan anuncios en Meta, 77% no tiene un sitio web utilizable, 83% de las 18 contactadas no contestó a tiempo y 41% no publica con regularidad y 10% paga anuncios con el botón de WhatsApp roto.">
-          <div class="bar"><b>77%</b><i style="--v: 77%"></i><em>No tiene un sitio web utilizable (30 de 39)</em></div>
-          <div class="bar"><b>83%</b><i style="--v: 83%"></i><em>No contestó a tiempo (15 de las 18 que contactamos)</em></div>
-          <div class="bar"><b>41%</b><i style="--v: 41%"></i><em>No publica con regularidad (16 de 39)</em></div>
-          <div class="bar bar--accent"><b>10%</b><i style="--v: 10%"></i><em>Paga anuncios con el botón de WhatsApp roto (4 de 39)</em></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="plan" style="--h: 1; --hm: 2" aria-labelledby="plan-h">
-    <div class="wrap grid grid--middle">
-      <div class="span-5">
-        <div class="section-head">
-          <h2 id="plan-h">Qué haríamos esta semana. <span class="muted">En este orden, y el primer paso no se cobra.</span></h2>
+          <h2 id="propuesta-h">Cómo se arreglaría. <span class="muted">Una propuesta, en el orden que nos parece correcto.</span></h2>
         </div>
         <ul class="checks">
-          <li>Cuánto tarda la clínica en contestar un mensaje nuevo</li>
-          <li>Si el anuncio lleva a una conversación o a un error</li>
-          <li>Qué encuentra una paciente cuando busca su nombre</li>
-          <li>Cuántos pasos hay entre el anuncio y una cita</li>
+          <li>Primero el sitio, porque sin él lo demás se renta</li>
+          <li>Después el camino, para que ningún mensaje se pierda</li>
+          <li>Al final la medición, para saber qué anuncio sirve</li>
         </ul>
-        <p class="t-lead">Lo mismo que revisamos en las otras 38 clínicas, aplicado a la suya.</p>
+        <p class="t-lead lead-note">Esto es lo que haríamos si decide pedirlo. Nada de esto está en marcha.</p>
       </div>
       <div class="span-6 start-7">
-        <div class="panel flow">
-          <div class="flow__step"><span class="flow__n">01</span><div><b>Arreglamos el botón</b><span class="flow__t">Hoy, sin costo y sin compromiso. Aunque no trabaje con nosotros.</span></div></div>
-          <div class="flow__step"><span class="flow__n">02</span><div><b>Revisamos a dónde llegan sus clics</b><span class="flow__t">Paso por paso, desde el teléfono de una paciente.</span></div></div>
-          <div class="flow__step"><span class="flow__n">03</span><div><b>Le entregamos el diagnóstico por escrito</b><span class="flow__t">Qué encontramos y en qué orden conviene resolverlo.</span></div></div>
-          <div class="flow__step"><span class="flow__n">04</span><div><b>Usted decide si seguimos</b><span class="flow__t">No hay contrato en la primera llamada. El diagnóstico es suyo de todos modos.</span></div></div>
+        <div class="panel flow" data-visual role="img" aria-label="La propuesta en cuatro pasos: un sitio propio de una página, el botón conectado, una sola ruta hasta la cita y la medición de qué anuncio trae pacientes.">
+          <div class="flow__step"><span class="flow__n">01</span><div><b>Un sitio propio, de una página</b><span class="flow__t">Donde el anuncio aterrice: qué trata, quién atiende y cómo agendar. Suyo, no de Meta.</span></div></div>
+          <div class="flow__step"><span class="flow__n">02</span><div><b>El botón, conectado</b><span class="flow__t">Que el clic abra una conversación de verdad, desde el anuncio y desde el sitio.</span></div></div>
+          <div class="flow__step"><span class="flow__n">03</span><div><b>Una sola ruta hasta la cita</b><span class="flow__t">Del anuncio al mensaje y del mensaje a la agenda, sin pasos de más.</span></div></div>
+          <div class="flow__step"><span class="flow__n">04</span><div><b>Saber qué anuncio trae pacientes</b><span class="flow__t">Y cuál solo gasta.</span></div></div>
         </div>
       </div>
     </div>
@@ -205,20 +223,13 @@
   <div class="wrap">
     <div class="closing__cta close--type">
       <div class="section-head">
-        <h2 id="close-h">Agendar la llamada de 15 minutos</h2>
-        <p class="t-lead">Le decimos qué encontramos y arreglamos el botón, trabaje con nosotros o no.</p>
+        <h2 id="close-h">¿Quiere ver la propuesta completa?</h2>
+        <p class="t-lead">Pídala y se la mandamos por escrito, con lo que encontramos y lo que costaría.</p>
       </div>
-      <a class="btn btn--primary" href="mailto:hola@meridian.example">Agendar la llamada de 15 minutos<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      <a class="btn btn--primary" href="mailto:hola@meridian.example">Pedir la propuesta<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
     </div>
     <div class="closing__links">
-      <div class="grid">
-        <div class="span-6 stack-4">
-          <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>Meridian</a>
-          <p class="footer__lede">Marketing para clínicas. Tijuana, Baja California.</p>
-        </div>
-        <div class="span-3 start-7 footer__col"><h4>Este diagnóstico</h4><ul><li><a href="#hallazgo">El hallazgo</a></li><li><a href="#mercado">Las 39 clínicas</a></li><li><a href="#plan">Qué haríamos</a></li></ul></div>
-        <div class="span-3 footer__col"><h4>Meridian</h4><ul><li><a href="#creencia">En qué creemos</a></li><li><a href="mailto:hola@meridian.example">Escribirnos</a></li></ul></div>
-      </div>
+      <div class="footer__brand"><img src="brand/mark.png" alt="" width="256" height="200"><p class="footer__lede">Meridian · Marketing para clínicas · Tijuana</p></div>
       <div class="footer__legal"><span>&copy; 2026 Meridian</span><span>Datos de páginas públicas, noviembre de 2026.</span></div>
     </div>
   </div>

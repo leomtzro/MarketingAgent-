@@ -27,7 +27,7 @@
     {
      "n": 2,
      "tag": "section",
-     "id": "hallazgo",
+     "id": "sitio",
      "cls": "section",
      "top": 900,
      "h": 900,
@@ -43,7 +43,7 @@
     {
      "n": 3,
      "tag": "section",
-     "id": "mercado",
+     "id": "boton",
      "cls": "section section--alt",
      "top": 1800,
      "h": 900,
@@ -59,7 +59,7 @@
     {
      "n": 4,
      "tag": "section",
-     "id": "plan",
+     "id": "propuesta",
      "cls": "section",
      "top": 2700,
      "h": 900,
@@ -111,8 +111,8 @@
    "width": 390,
    "height": 844,
    "navH": 56,
-   "scrollHeight": 5936,
-   "screens": 7.03,
+   "scrollHeight": 6394,
+   "screens": 7.58,
    "sections": [
     {
      "n": 1,
@@ -133,12 +133,12 @@
     {
      "n": 2,
      "tag": "section",
-     "id": "hallazgo",
+     "id": "sitio",
      "cls": "section",
      "top": 844,
-     "h": 865,
-     "hScreens": 1.02,
-     "offGrid": 21,
+     "h": 1119,
+     "hScreens": 1.33,
+     "offGrid": 275,
      "tiles": [
       {
        "file": "mobile-sec-02-a.jpg",
@@ -146,47 +146,47 @@
       },
       {
        "file": "mobile-sec-02-b.jpg",
-       "scrollY": 865
+       "scrollY": 1119
       }
      ]
     },
     {
      "n": 3,
      "tag": "section",
-     "id": "mercado",
+     "id": "boton",
      "cls": "section section--alt",
-     "top": 1709,
-     "h": 851,
-     "hScreens": 1.01,
-     "offGrid": 7,
+     "top": 1963,
+     "h": 1055,
+     "hScreens": 1.25,
+     "offGrid": 211,
      "tiles": [
       {
        "file": "mobile-sec-03-a.jpg",
-       "scrollY": 1709
+       "scrollY": 1963
       },
       {
        "file": "mobile-sec-03-b.jpg",
-       "scrollY": 1716
+       "scrollY": 2174
       }
      ]
     },
     {
      "n": 4,
      "tag": "section",
-     "id": "plan",
+     "id": "propuesta",
      "cls": "section",
-     "top": 2560,
+     "top": 3018,
      "h": 1688,
      "hScreens": 2,
      "offGrid": 0,
      "tiles": [
       {
        "file": "mobile-sec-04-a.jpg",
-       "scrollY": 2560
+       "scrollY": 3018
       },
       {
        "file": "mobile-sec-04-b.jpg",
-       "scrollY": 3404
+       "scrollY": 3862
       }
      ]
     },
@@ -195,14 +195,14 @@
      "tag": "section",
      "id": "creencia",
      "cls": "section statement mo-wh",
-     "top": 4248,
+     "top": 4706,
      "h": 844,
      "hScreens": 1,
      "offGrid": 0,
      "tiles": [
       {
        "file": "mobile-sec-05-a.jpg",
-       "scrollY": 4248
+       "scrollY": 4706
       }
      ]
     },
@@ -211,14 +211,14 @@
      "tag": "footer",
      "id": "contacto",
      "cls": "footer closing footer--dark",
-     "top": 5092,
+     "top": 5550,
      "h": 844,
      "hScreens": 1,
      "offGrid": 0,
      "tiles": [
       {
        "file": "mobile-sec-06-a.jpg",
-       "scrollY": 5092
+       "scrollY": 5550
       }
      ]
     }
@@ -226,5 +226,5 @@
    "consoleErrors": []
   }
  },
- "at": "2026-11-16T17:53:00.206Z"
+ "at": "2026-11-16T19:28:49.096Z"
 }
