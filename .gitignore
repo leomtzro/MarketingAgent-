@@ -3,3 +3,8 @@
 # The exact commit and content hash are pinned in skills-lock.json.
 .agents/
 .claude/skills/
+
+# tasteskill build artefacts: the kit's assets are a copy of .agents/, the
+# .taste-skill folder is checker state. The page itself is tracked.
+clinic-report/assets/
+clinic-report/.taste-skill/
