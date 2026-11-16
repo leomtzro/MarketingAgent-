@@ -1,0 +1,5 @@
+# Vendored skill payloads. Reproduce with:
+#   npx skills add Leonxlnx/taste-skill
+# The exact commit and content hash are pinned in skills-lock.json.
+.agents/
+.claude/skills/
