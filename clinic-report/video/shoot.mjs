@@ -1,5 +1,5 @@
 import{createRequire}from'module';const{chromium}=createRequire('/home/user/x.js')('playwright');
-const FPS=25, DUR=45, N=FPS*DUR;
+const FPS=25, DUR=49.5, N=Math.round(FPS*DUR);
 const b=await chromium.launch({args:['--no-sandbox','--force-device-scale-factor=1']});
 const p=await (await b.newContext({viewport:{width:1080,height:1920},deviceScaleFactor:1})).newPage();
 await p.goto('file://'+process.cwd()+'/reel.html');

@@ -1,5 +1,5 @@
 import{createRequire}from'module';const{chromium}=createRequire('/home/user/x.js')('playwright');
-const T=[2.8,8.6,15.0,21.8,28.0,33.8,38.8,43.2];
+const T=[2.8,8.6,15.0,21.8,28.0,33.8,38.8,43.2,47.5];
 const b=await chromium.launch({args:['--no-sandbox']});
 const p=await(await b.newContext({viewport:{width:1080,height:1920},deviceScaleFactor:1})).newPage();
 await p.goto('file://'+process.cwd()+'/reel.html');

@@ -1,5 +1,5 @@
 # Locución — Reel Meridian · Diagnóstico Tijuana
-45 s · español · tono: sereno, factual, sin urgencia fabricada.
+49.5 s · español · tono: sereno, factual, sin urgencia fabricada.
 Lee despacio. Las pausas hacen el trabajo.
 
 | # | Entra | Texto | Dura |
@@ -12,6 +12,9 @@ Lee despacio. Las pausas hacen el trabajo.
 | 6 | 0:31.0 | Y cuando el paciente sí llega, el setenta y ocho por ciento no tiene un sitio web utilizable. | 5.6 s |
 | 7 | 0:36.6 | El tamaño no salva a nadie. | 4.4 s |
 | 8 | 0:41.0 | El anuncio funciona. El camino no. | 4.0 s |
+| 9 | 0:45.0 | *(sin locución — tarjeta de cierre en pantalla)* | 4.5 s |
+
+La tarjeta 9 va sin voz: deja que se lea sola antes del loop.
 
 ~115 palabras. A ritmo normal de locución en español (2.5–2.8 palabras/seg) entra en 45 s con aire.
 
