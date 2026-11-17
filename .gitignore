@@ -8,3 +8,8 @@
 # .taste-skill folder is checker state. The page itself is tracked.
 clinic-report/assets/
 clinic-report/.taste-skill/
+
+# reel build artefacts: 1,125 captured frames are regenerable from reel.html
+clinic-report/video/frames/
+clinic-report/video/mark.png
+clinic-report/video/lockup.png
