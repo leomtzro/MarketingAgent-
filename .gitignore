@@ -13,3 +13,7 @@ clinic-report/.taste-skill/
 clinic-report/video/frames/
 clinic-report/video/mark.png
 clinic-report/video/lockup.png
+
+# post contact sheets are regenerable from out/
+clinic-report/posts/mark.png
+clinic-report/posts/mark-cream.png
