@@ -1,4 +1,10 @@
-# Correo branded — Meridian
+# Correos branded — Meridian
+
+| Archivo | Cuándo se manda |
+|---|---|
+| `diagnostico.html` / `.txt` | En frío, para entregar el diagnóstico de 4 páginas |
+| `propuesta.html` / `.txt` | **Después de la llamada**, con alcance, medición y condiciones |
+
 
 `diagnostico.html` es la plantilla HTML y `diagnostico.txt` la versión de texto plano.
 **Manda siempre las dos** (multipart): si solo mandas HTML, varios filtros lo tratan como
@@ -9,8 +15,16 @@ spam y los lectores de pantalla no tienen de dónde leer.
 |---|---|
 | `[APELLIDO]` | Apellido del doctor |
 | `[TU NOMBRE]` | Tu nombre |
-| `[LINK_PDF]` | URL del PDF del diagnóstico |
-| `[LINK_BAJA]` | Liga de baja que dé tu plataforma de envío |
+| `[LINK_PDF]` | URL del PDF del diagnóstico (solo diagnostico) |
+| `[LINK_BAJA]` | Liga de baja que dé tu plataforma de envío (solo diagnostico) |
+| `[CLÍNICA]` | Nombre de la clínica (solo propuesta) |
+| `[PUNTO 1..3]` | Lo que dijo en la llamada, en sus palabras (solo propuesta) |
+| `[PRECIO]` | Mensualidad a partir del tercer mes — **sin decidir** (solo propuesta) |
+| `[FECHA]` | Fecha de arranque acordada (solo propuesta) |
+| `[LINK_SI]` | A dónde va el botón: calendario, WhatsApp o un "responder" (solo propuesta) |
+
+## La propuesta no lleva liga de baja
+Es correo uno a uno pedido por el destinatario, no difusión. El de diagnóstico sí la lleva.
 
 ## Falta subir el logo
 La plantilla apunta a `https://meridian-50y.pages.dev/img/meridian-mark.png`.

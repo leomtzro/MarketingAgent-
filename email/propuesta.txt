@@ -1,0 +1,46 @@
+Dr. [APELLIDO], gracias por el tiempo de hoy.
+
+Le dejo por escrito lo que hablamos, para que lo pueda leer con calma y, si quiere,
+enseñárselo a alguien más.
+
+LO QUE ME QUEDÓ DE LA LLAMADA
+- [PUNTO 1 — qué quiere lograr, en sus palabras]
+- [PUNTO 2 — qué le está estorbando hoy]
+- [PUNTO 3 — qué ya intentó]
+
+LO QUE PROPONEMOS
+01. Arreglar el camino hasta la cita. El anuncio, el botón y la página a donde cae.
+    Primero esto, porque es donde hoy se pierde gente que usted ya pagó.
+02. Contestar en minutos, con el tono de su clínica, en el horario que acordemos.
+    Resolvemos precio, logística y dudas. El consejo médico siempre lo da su equipo.
+03. Agendar, recordar y dar seguimiento. Cita confirmada, recordatorio antes, y
+    seguimiento a quien no respondió.
+04. Contenido para quien usted quiere atender. Real, de su clínica, sin fotos de catálogo.
+
+LO QUE VAMOS A MEDIR CADA MES
+Mensajes recibidos · tiempo de primera respuesta · citas agendadas · citas asistidas ·
+tratamientos aceptados.
+Las dos últimas dependen de que su equipo nos comparta la agenda. Casi nadie las mide,
+y son las que de verdad dicen si esto funciona.
+
+CONDICIONES
+Primer mes:                   Gratis
+Segundo mes:                  30% de descuento
+Del tercer mes en adelante:   $[PRECIO] MXN / mes
+Permanencia:                  Ninguna. Cancela cuando quiera.
+Presupuesto de anuncios:      Aparte, lo paga usted a Meta
+
+Este precio es el de las primeras 10 clínicas. Somos nuevos y lo decimos: queremos
+10 clínicas que crezcan con nosotros.
+
+Empezamos el [FECHA]: [LINK_SI]
+
+O respóndame este correo con sus dudas. Si algo no le cuadra, prefiero saberlo ahora.
+
+Quedo al pendiente,
+[TU NOMBRE]
+Meridian · Marketing para clínicas · Tijuana
+
+---
+Meridian · Tijuana, Baja California
+Aviso de privacidad: https://meridian-50y.pages.dev/aviso-de-privacidad
