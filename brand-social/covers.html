@@ -1,0 +1,58 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f4f0;--ink:#1d1d1f;--muted:#67676c;--accent:#9b2226;--cream:#f7f4f0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#999;font-family:"Geist",-apple-system,system-ui,sans-serif;
+ -webkit-font-smoothing:antialiased;font-feature-settings:"ss01"}
+.cv{width:1640px;height:856px;background:var(--bg);color:var(--ink);position:relative;overflow:hidden;
+ display:flex;align-items:center}
+.cv.red{background:var(--accent);color:var(--cream)}
+/* content sits right of the profile-photo zone and inside both crops */
+.block{margin-left:700px;max-width:800px}
+.lbl{font-size:25px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+ color:var(--accent);margin-bottom:30px}
+.red .lbl{color:var(--cream);opacity:.78}
+h1{font-size:82px;font-weight:700;line-height:1.06;letter-spacing:-.035em}
+.red h1{font-size:78px}
+h1 em{font-style:normal;color:var(--accent)}
+.red h1 em{color:var(--cream);text-decoration:underline;text-decoration-thickness:5px;text-underline-offset:12px}
+p{font-size:33px;font-weight:450;line-height:1.4;color:#4a4a4e;margin-top:30px;max-width:720px}
+.red p{color:rgba(247,244,240,.86)}
+/* the mark sits top-left, clear of the profile photo which overlaps bottom-left */
+.mk{position:absolute;top:188px;left:150px;height:88px}
+.rule{position:absolute;top:50%;left:620px;transform:translateY(-50%);width:6px;height:210px;background:var(--accent)}
+.red .rule{background:rgba(247,244,240,.92)}
+</style></head><body>
+
+<!-- A · sober, proof-led -->
+<section class="cv" id="a">
+  <div class="rule"></div><img class="mk" src="mark.png">
+  <div class="block">
+    <div class="lbl">Meridian · Tijuana</div>
+    <h1>Marketing para <em>clínicas</em>.</h1>
+    <p>Revisamos 40 clínicas de Tijuana antes de escribir una sola palabra.</p>
+  </div>
+</section>
+
+<!-- B · sober on accent -->
+<section class="cv red" id="b">
+  <div class="rule"></div><img class="mk" src="mark-cream.png">
+  <div class="block">
+    <div class="lbl">Meridian · Marketing para clínicas</div>
+    <h1>El anuncio funciona. El <em>camino</em> no.</h1>
+    <p>Revisamos 40 clínicas de Tijuana que pagan anuncios. 31 no tenían a dónde mandar a sus pacientes.</p>
+  </div>
+</section>
+
+<!-- C · exterminator voice -->
+<section class="cv" id="c">
+  <div class="rule"></div><img class="mk" src="mark.png">
+  <div class="block">
+    <div class="lbl">Meridian · Tijuana</div>
+    <h1>Exterminamos <em>sillas vacías</em>.</h1>
+    <p>Marketing para clínicas. Tu agenda, por fin llena.</p>
+  </div>
+</section>
+
+</body></html>
