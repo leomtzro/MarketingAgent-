@@ -23,3 +23,7 @@ website/site/js/
 website/site/img/
 
 website/preview/
+
+# el logo del correo sí es nuestro, aunque viva junto a los assets espejeados
+!website/site/img/meridian-mark.png
+!website/site/img/meridian-mark@2x.png
