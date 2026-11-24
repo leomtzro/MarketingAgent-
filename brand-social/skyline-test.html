@@ -1,0 +1,62 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f4f0;--ink:#1d1d1f;--accent:#9b2226}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#999;font-family:"Geist",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.cv{width:1640px;height:856px;background:var(--bg);color:var(--ink);position:relative;overflow:hidden;
+ display:flex;align-items:center}
+.block{margin-left:700px;max-width:800px;position:relative;z-index:2}
+.lbl{font-size:25px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:30px}
+h1{font-size:82px;font-weight:700;line-height:1.06;letter-spacing:-.035em}
+h1 em{font-style:normal;color:var(--accent)}
+p{font-size:33px;line-height:1.4;color:#4a4a4e;margin-top:30px;max-width:720px}
+.mk{position:absolute;top:188px;left:150px;height:88px;z-index:2}
+.rule{position:absolute;top:50%;left:620px;transform:translateY(-50%);width:6px;height:210px;background:var(--accent);z-index:2}
+.sky{position:absolute;bottom:0;left:0;width:100%;z-index:1}
+.sky.faint{opacity:.10}
+.icon{position:absolute;top:168px;left:410px;z-index:2;opacity:.9}
+</style></head><body>
+
+<!-- S1: full skyline silhouette behind everything -->
+<section class="cv" id="s1">
+  <svg class="sky faint" viewBox="0 0 1640 300" preserveAspectRatio="none" height="300">
+    <g fill="#1d1d1f">
+      <rect x="0" y="210" width="90" height="90"/><rect x="100" y="170" width="70" height="130"/>
+      <rect x="180" y="230" width="110" height="70"/><rect x="300" y="140" width="60" height="160"/>
+      <rect x="370" y="200" width="95" height="100"/><rect x="475" y="175" width="55" height="125"/>
+      <!-- Arco Monumental -->
+      <path d="M560 300 L560 290 Q640 110 720 290 L720 300 L700 300 L700 292 Q640 150 580 292 L580 300 Z"/>
+      <rect x="740" y="215" width="105" height="85"/><rect x="855" y="160" width="65" height="140"/>
+      <rect x="930" y="235" width="120" height="65"/>
+      <!-- CECUT: la bola -->
+      <circle cx="1120" cy="245" r="55"/><rect x="1060" y="265" width="200" height="35"/>
+      <rect x="1275" y="185" width="75" height="115"/><rect x="1360" y="225" width="110" height="75"/>
+      <rect x="1480" y="155" width="60" height="145"/><rect x="1550" y="220" width="90" height="80"/>
+    </g>
+  </svg>
+  <img class="mk" src="mark.png"><div class="rule"></div>
+  <div class="block">
+    <div class="lbl">Meridian · Tijuana</div>
+    <h1>Marketing para <em>clínicas</em>.</h1>
+    <p>Revisamos 40 clínicas de Tijuana antes de escribir una sola palabra.</p>
+  </div>
+</section>
+
+<!-- S2: two landmarks only, as a small accent -->
+<section class="cv" id="s2">
+  <img class="mk" src="mark.png"><div class="rule"></div>
+  <svg class="icon" width="210" height="130" viewBox="0 0 210 130">
+    <g fill="none" stroke="#9b2226" stroke-width="5">
+      <path d="M8 124 Q58 16 108 124"/>
+      <circle cx="162" cy="96" r="27"/><path d="M128 124 h68"/>
+    </g>
+  </svg>
+  <div class="block">
+    <div class="lbl">Meridian · Tijuana</div>
+    <h1>Marketing para <em>clínicas</em>.</h1>
+    <p>Revisamos 40 clínicas de Tijuana antes de escribir una sola palabra.</p>
+  </div>
+</section>
+
+</body></html>
