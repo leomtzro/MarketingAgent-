@@ -27,10 +27,15 @@ spam y los lectores de pantalla no tienen de dónde leer.
 Es correo uno a uno pedido por el destinatario, no difusión. El de diagnóstico sí la lleva.
 
 ## Falta subir el logo
-La plantilla apunta a `https://meridian-50y.pages.dev/img/meridian-mark.png`.
+Las plantillas apuntan a `https://meridian-50y.pages.dev/img/meridian-lockup.png`.
 Los archivos ya están en `website/site/img/` (1x y 2x), pero **el sitio no está
-publicado**, así que hoy el logo sale como texto alternativo "Meridian". Se arregla solo
-cuando publiques el sitio.
+publicado**, así que hoy el logo sale como texto alternativo. Se arregla solo al publicar.
+
+**Por qué el logo es horizontal y no solo el símbolo.** Outlook bloquea imágenes por
+defecto. Cuando eso pasa, el cliente dibuja una caja del ancho que diga el atributo
+`width` y mete ahí el `alt`. Con el símbolo a 52 px, "Meridian" se cortaba en "Meridia".
+Con el lockup a 150 px cabe completo, y el `alt` lleva estilo de fuente para que la
+versión sin imagen se vea a propósito. **Si cambias el logo, no bajes de 150 px de ancho.**
 
 ## Qué sí y qué no se puede en correo
 - **No hay JavaScript.** Ningún correo puede tener una calculadora ni un slider.
