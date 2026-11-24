@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pide tu demo gratis | Meridian</title>
+<meta name="description" content="Cuatro minutos hoy. Te mandamos cómo le contestaríamos a un paciente de tu especialidad, en un día hábil y gratis.">
+<link rel="canonical" href="/demo">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pide tu demo gratis | Meridian">
+<meta property="og:description" content="Cuatro minutos hoy. Te mandamos cómo le contestaríamos a un paciente de tu especialidad, en un día hábil y gratis.">
+<meta property="og:image" content="/img/og.jpg">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#9B2226">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+h1,h2{font-family:'Fraunces',Georgia,serif !important;font-weight:700 !important;letter-spacing:-0.022em !important;font-variation-settings:'SOFT' 0,'WONK' 0}
+.hl{background:linear-gradient(transparent 60%,#EFC9C6 60%);padding:0 .06em}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Inter',system-ui,sans-serif;background:#F5F5F7;color:#1D1D1F;-webkit-font-smoothing:antialiased}
+a{color:#9B2226;text-decoration:none}a:hover{text-decoration:underline}
+.glassd{background:linear-gradient(135deg,rgba(255,255,255,0.66),rgba(255,255,255,0.36));backdrop-filter:blur(26px) saturate(180%);-webkit-backdrop-filter:blur(26px) saturate(180%);border:1px solid rgba(255,255,255,0.7);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95),0 30px 80px rgba(80,20,22,0.12);border-radius:4px;color:#1D1D1F}
+.pill{font:inherit;cursor:pointer;transition:background .15s ease,border-color .15s ease}
+.pill:hover{border-color:#ffffff}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #9B2226;outline-offset:2px}
+.field{width:100%;box-sizing:border-box;min-height:52px;padding:0 16px;font:inherit;font-size:17px;color:#1D1D1F;background:rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.14);border-radius:4px}
+.field::placeholder{color:#86868B}
+@keyframes burst{0%{opacity:0;transform:translate(0,0) rotate(0) scale(.4)}12%{opacity:1}100%{opacity:0;transform:translate(var(--x),var(--y)) rotate(var(--r)) scale(1)}}
+@keyframes ring{from{stroke-dashoffset:190}to{stroke-dashoffset:0}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.conf{position:absolute;left:50%;top:40px;width:9px;height:14px;border-radius:2px;animation:burst 1.6s cubic-bezier(.15,.7,.3,1) both}
+.ringp{stroke-dasharray:190;animation:ring .9s .1s ease-out both}
+.rise{animation:rise .6s cubic-bezier(.2,.8,.2,1) both}
+@media (prefers-reduced-motion:reduce){.conf{display:none}.ringp,.rise{animation:none}}
+@media (prefers-reduced-motion:reduce){.pill{transition:none}}
+.slide{position:relative;width:min(100%,clamp(300px,34vw,440px));height:60px;border-radius:999px;background:linear-gradient(135deg,#9B2226,#6A1218);box-shadow:inset 0 1px 0 rgba(255,255,255,0.28),inset 0 -1px 0 rgba(0,0,0,0.2),0 14px 34px rgba(155,34,38,0.32);overflow:hidden;user-select:none;-webkit-user-select:none;box-sizing:border-box;flex:none;--x:0px;--p:0}
+.slide::before{content:"";position:absolute;top:0;left:0;bottom:0;width:calc(var(--x) + 60px);background:rgba(255,255,255,0.14);border-radius:999px;transition:width .4s cubic-bezier(.2,.8,.2,1)}
+.slide>a,.slide>button{border:0;margin:0;font-family:inherit;cursor:pointer;width:100%;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-left:56px;font-size:16px;font-weight:600;letter-spacing:-0.01em;text-decoration:none !important;color:#fff;opacity:calc(1 - var(--p) * 1.5);background:linear-gradient(90deg,rgba(255,255,255,.5) 0%,#fff 40%,rgba(255,255,255,.5) 80%) 0 0/200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:slshine 3s linear infinite}
+.slide .knob{position:absolute;top:4px;left:4px;width:52px;height:52px;border-radius:50%;background:#fff;color:#9B2226;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.28);transform:translateX(var(--x));transition:transform .4s cubic-bezier(.2,.8,.2,1);cursor:grab;touch-action:none;z-index:2}
+.slide:hover .knob{animation:slnudge 1.3s ease-in-out infinite}
+.slide.drag::before,.slide.drag .knob{transition:none;animation:none}
+.slide.drag .knob{cursor:grabbing}
+@keyframes slshine{to{background-position:-200% 0}}
+@keyframes slnudge{50%{margin-left:7px}}
+@media (prefers-reduced-motion:reduce){.slide>a,.slide>button,.slide .knob{animation:none}}
+</style>
+<style>
+@media (max-width:600px){
+  nav.glass{padding:6px 8px 6px 16px !important;row-gap:0 !important}
+  nav.glass>:first-child{order:1}
+  nav.glass>.igb{order:2;padding:0 14px !important;font-size:0 !important;gap:0 !important}
+  nav.glass>.igb svg{width:20px;height:20px}
+  nav.glass>:nth-child(2){order:3;width:100%;justify-content:space-between;gap:0 12px !important}
+}
+</style>
+<script src="/js/morphdom.min.js" defer></script>
+<script src="/js/dc-lite.js" defer></script>
+<script src="/js/demo.js" defer></script>
+</head>
+<body>
+<template id="dc-tpl">
+
+<div style="min-height:900px;width:100%;box-sizing:border-box;padding:24px;background:radial-gradient(1100px 700px at 88% -8%,rgba(155,34,38,0.20),transparent 60%),radial-gradient(900px 650px at -5% 22%,rgba(239,201,198,0.60),transparent 62%),radial-gradient(900px 700px at 60% 110%,rgba(155,34,38,0.12),transparent 60%),#F7F4F0;display:flex;justify-content:center">
+<div style="width:100%;max-width:1160px;display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;align-content:flex-start">
+
+<!-- LEFT -->
+<aside style="flex:1 1 300px;max-width:100%;display:flex;flex-direction:column;gap:32px;padding:24px 8px;box-sizing:border-box">
+<a href="/" style="display:flex;align-items:center;gap:8px;font-size:17px;font-weight:600;letter-spacing:-0.02em;color:#1D1D1F;min-height:44px">
+<svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#9B2226" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="11" stroke-width="1.6"></circle><ellipse cx="16" cy="16" rx="14.500" ry="5.500" transform="rotate(-22 16 16)" stroke-width="1.6"></ellipse><path d="M13 3l6 26M4 16h24" stroke-width="1" opacity="0.85"></path></svg>Meridian</a>
+<div>
+<div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">Demo gratuita</div>
+<h1 style="margin:12px 0 0;font-size:clamp(34px,4.4vw,56px);line-height:1.03;font-weight:700;letter-spacing:-0.035em">Cuéntanos de tu clínica. Te decimos dónde se pierden tus pacientes.</h1>
+<p style="margin:16px 0 0;font-size:19px;line-height:1.4;color:#6E6E73">3 secciones, unos 4 minutos. Una persona revisa tus respuestas y prepara tu demo.</p>
+</div>
+<div class="glassd" style="padding:20px 24px;display:flex;flex-direction:column;gap:14px">
+<div style="font-size:14px;font-weight:600;color:#6E6E73">Lo que recibes</div>
+<div style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.35"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E8E3E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M5 12l5 5 9-10"></path></svg>El diagnóstico de tu Instagram y tu sitio web: qué funciona y las 3 cosas que cambiaríamos primero</div>
+<div style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.35"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E8E3E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M5 12l5 5 9-10"></path></svg>Una conversación de ejemplo: cómo le contestaríamos a un paciente de tu especialidad</div>
+<div style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.35"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1E8E3E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M5 12l5 5 9-10"></path></svg><span>Tu plan de arranque: qué hacemos la primera semana, y una llamada para revisarlo</span></div>
+</div>
+</aside>
+
+<!-- RIGHT -->
+<main style="flex:2 1 520px;min-width:0;display:flex;flex-direction:column;padding:8px 0">
+<div class="glassd" style="padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;gap:28px">
+
+<sc-if value="{{showProgress}}" hint-placeholder-val="{{true}}">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;gap:6px" aria-hidden="true">
+<sc-for list="{{segs}}" as="s" hint-placeholder-count="3"><div style="{{s.style}}"></div></sc-for>
+</div>
+<div style="font-size:14px;color:#6E6E73;font-weight:500">{{stepLabel}}</div>
+</div>
+</sc-if>
+
+<!-- WELCOME -->
+<sc-if value="{{isWelcome}}" hint-placeholder-val="{{true}}">
+<div style="display:flex;flex-direction:column;gap:28px">
+<div>
+<div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">Antes de empezar</div>
+<h2 style="margin:10px 0 0;font-size:clamp(30px,4vw,48px);line-height:1.05;font-weight:700;letter-spacing:-0.035em">Cuatro minutos. Tres secciones.</h2>
+</div>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.07);"><div style="flex:none;width:44px;font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">01</div><div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:20px;font-weight:600;letter-spacing:-0.015em">Tu clínica</div><div style="font-size:16px;line-height:1.4;color:#6E6E73">Quién eres y a dónde te mandamos la demo.</div></div></div>
+<div style="display:flex;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.07);"><div style="flex:none;width:44px;font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">02</div><div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:20px;font-weight:600;letter-spacing:-0.015em">Tus pacientes y tu agenda</div><div style="font-size:16px;line-height:1.4;color:#6E6E73">De dónde llegan hoy y cuántos más puedes atender.</div></div></div>
+<div style="display:flex;gap:20px;align-items:baseline;padding:18px 0;"><div style="flex:none;width:44px;font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">03</div><div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:20px;font-weight:600;letter-spacing:-0.015em">Trabajar juntos</div><div style="font-size:16px;line-height:1.4;color:#6E6E73">Quién contesta, qué esperas y qué necesitamos de tu lado.</div></div></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center">
+<div class="slide"><button type="button" onClick="{{start}}">Desliza para empezar</button><div class="knob" aria-hidden="true" onPointerDown="{{slideStart}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
+<div style="font-size:15px;color:#6E6E73">Tu demo llega por WhatsApp en {{days}}.</div>
+</div>
+</div>
+</sc-if>
+
+<!-- SECTION -->
+<sc-if value="{{isSection}}" hint-placeholder-val="{{false}}">
+<div style="display:flex;flex-direction:column;gap:32px">
+<div>
+<h2 style="margin:0;font-size:clamp(28px,3.4vw,40px);line-height:1.08;font-weight:700;letter-spacing:-0.03em">{{secTitle}}</h2>
+<p style="margin:10px 0 0;font-size:17px;line-height:1.4;color:#6E6E73">{{secHint}}</p>
+</div>
+
+<sc-for list="{{qs}}" as="q" hint-placeholder-count="5">
+<div style="display:flex;flex-direction:column;gap:12px">
+
+<sc-if value="{{q.showLabel}}" hint-placeholder-val="{{true}}">
+<div>
+<label for="{{q.id}}" style="font-size:18px;font-weight:600;line-height:1.3;letter-spacing:-0.01em">{{q.q}}<span style="color:#86868B;font-weight:400">{{q.opt}}</span></label>
+<sc-if value="{{q.hasHint}}" hint-placeholder-val="{{false}}"><p style="margin:6px 0 0;font-size:14px;line-height:1.4;color:#6E6E73">{{q.hint}}</p></sc-if>
+</div>
+</sc-if>
+
+<!-- text -->
+<sc-if value="{{q.isText}}" hint-placeholder-val="{{false}}">
+<input id="{{q.id}}" class="field" type="{{q.inputType}}" placeholder="{{q.ph}}" value="{{q.val}}" onInput="{{q.onInput}}">
+</sc-if>
+
+<!-- choice / multi -->
+<sc-if value="{{q.isPills}}" hint-placeholder-val="{{true}}">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<sc-for list="{{q.opts}}" as="o" hint-placeholder-count="4">
+<button type="button" class="pill" onClick="{{o.pick}}" aria-pressed="{{o.on}}" style="{{o.style}}">{{o.label}}</button>
+</sc-for>
+</div>
+</sc-if>
+
+<!-- clinic match -->
+<sc-if value="{{q.isClinic}}" hint-placeholder-val="{{false}}">
+<div style="display:flex;flex-direction:column;gap:12px">
+<input id="clinic" class="field" type="text" autocomplete="organization" placeholder="Como aparece en Google Maps" value="{{clinicText}}" onInput="{{setClinicText}}">
+<sc-if value="{{showSugg}}" hint-placeholder-val="{{false}}">
+<div style="display:flex;flex-direction:column;gap:6px">
+<sc-for list="{{sugg}}" as="c" hint-placeholder-count="2">
+<button type="button" class="pill" onClick="{{c.pick}}" style="min-height:48px;padding:0 16px;border-radius:4px;border:1px solid rgba(0,0,0,0.11);background:rgba(0,0,0,0.04);color:#1D1D1F;text-align:left;font-size:16px">{{c.name}} <span style="color:#6E6E73;font-size:14px">· {{c.city}}</span></button>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{showIgCard}}" hint-placeholder-val="{{false}}">
+<div style="border:1px solid rgba(0,0,0,0.14);background:rgba(0,0,0,0.03);border-radius:4px;padding:20px;display:flex;flex-direction:column;gap:14px">
+<div style="font-size:16px;font-weight:600">¿Es este tu Instagram?</div>
+<div style="display:flex;align-items:center;gap:14px">
+<div aria-hidden="true" style="width:56px;height:56px;border-radius:50%;flex:none;background:linear-gradient(135deg,#ffb347,#ff5e7e,#8a5cff);display:flex;align-items:center;justify-content:center"><div style="width:48px;height:48px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px">{{igInit}}</div></div>
+<div style="display:flex;flex-direction:column;gap:2px"><div style="font-size:17px;font-weight:600">{{igHandle}}</div><div style="font-size:14px;color:#6E6E73">{{igName}}</div></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="background:rgba(214,110,112,0.18);border:1px solid rgba(214,110,112,0.5);padding:6px 12px;border-radius:980px;font-size:14px">Último post: hace [N] días</span>
+<span style="background:rgba(0,0,0,0.05);border:1px solid rgba(0,0,0,0.11);padding:6px 12px;border-radius:980px;font-size:14px">[N] posts en 30 días</span>
+</div>
+<div style="font-size:14px;color:#6E6E73">Tu diagnóstico completo llega por WhatsApp.</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<button type="button" class="pill" onClick="{{igYes}}" aria-pressed="{{igYesOn}}" style="{{igYesStyle}}">Sí, es nuestro</button>
+<button type="button" class="pill" onClick="{{igNo}}" aria-pressed="{{igNoOn}}" style="{{igNoStyle}}">No, es otro</button>
+</div>
+<sc-if value="{{showIgInput}}" hint-placeholder-val="{{false}}">
+<div style="display:flex;flex-direction:column;gap:6px"><label for="ig" style="font-size:15px;font-weight:600">Tu Instagram correcto</label><input id="ig" class="field" type="text" placeholder="@tuclinica" value="{{igOther}}" onInput="{{setIgOther}}"></div>
+</sc-if>
+</div>
+</sc-if>
+<sc-if value="{{showNoMatch}}" hint-placeholder-val="{{false}}">
+<div style="display:flex;flex-direction:column;gap:6px"><label for="ig2" style="font-size:15px;font-weight:600">¿Cuál es su Instagram? <span style="color:#86868B;font-weight:400">(si tienen)</span></label><input id="ig2" class="field" type="text" placeholder="@tuclinica" value="{{igOther}}" onInput="{{setIgOther}}"></div>
+</sc-if>
+</div>
+</sc-if>
+
+<!-- consent -->
+<sc-if value="{{q.isConsent}}" hint-placeholder-val="{{false}}">
+<label for="k" style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.4;color:#6E6E73;min-height:44px"><input id="k" type="checkbox" checked="{{consent}}" onChange="{{toggleConsent}}" style="width:24px;height:24px;flex:none;margin:0;accent-color:{{accent}}"><span>Acepto que Meridian me contacte por WhatsApp y correo para enviarme mi demo. Lee el <a href="/aviso-de-privacidad" target="_blank" rel="noopener">aviso de privacidad</a>.</span></label>
+</sc-if>
+
+</div>
+</sc-for>
+
+<!-- expectations before submit -->
+<sc-if value="{{isLast}}" hint-placeholder-val="{{false}}">
+<div style="border:1px solid rgba(0,0,0,0.11);background:rgba(0,0,0,0.025);border-radius:4px;padding:20px 24px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:16px;font-weight:600">Así funciona el primer mes (gratis)</div>
+<div style="font-size:15px;line-height:1.45;color:#3A3A3C"><strong>Semana 1:</strong> diagnóstico y configuración.</div>
+<div style="font-size:15px;line-height:1.45;color:#3A3A3C"><strong>Semanas 2 a 4:</strong> contenido, respuesta rápida a mensajes y primeras citas agendadas.</div>
+<div style="font-size:15px;line-height:1.45;color:#3A3A3C"><strong>Fin de mes:</strong> te mostramos cuántos mensajes, respuestas y citas hubo. Tú decides si seguimos.</div>
+<div style="font-size:14px;line-height:1.4;color:#6E6E73">Los resultados dependen de tu especialidad, tu agenda y la rapidez de tu equipo. Los números concretos los fijamos contigo al conocer tu clínica.</div>
+</div>
+</sc-if>
+
+<sc-if value="{{showError}}" hint-placeholder-val="{{false}}">
+<div role="status" style="font-size:15px;color:#B3261E">{{errorText}}</div>
+</sc-if>
+
+<div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+<button type="button" onClick="{{back}}" style="font:inherit;font-size:16px;color:#1D1D1F;background:none;border:1px solid rgba(0,0,0,0.15);border-radius:980px;padding:0 22px;min-height:44px;cursor:pointer">← Anterior</button>
+<button type="button" onClick="{{next}}" style="font:inherit;font-size:17px;font-weight:600;color:#fff;background:{{accent}};border:0;border-radius:980px;padding:0 28px;min-height:48px;cursor:pointer;opacity:{{nextOpacity}}">{{nextLabel}}</button>
+</div>
+</div>
+</sc-if>
+
+<!-- DONE -->
+<sc-if value="{{isDone}}" hint-placeholder-val="{{false}}">
+<div style="position:relative;display:flex;flex-direction:column;gap:28px;align-items:flex-start">
+<div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:visible">
+<sc-for list="{{confetti}}" as="c" hint-placeholder-count="18"><span class="conf" style="{{c}}"></span></sc-for>
+</div>
+<svg width="84" height="84" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#9B2226"/><circle class="ringp" cx="32" cy="32" r="30" fill="none" stroke="#EFC9C6" stroke-width="3" transform="rotate(-90 32 32)"/><path d="M20 33l8 8 16-18" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="rise">
+<div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">Solicitud recibida</div>
+<h2 style="margin:10px 0 0;font-size:clamp(44px,6vw,76px);line-height:.98">Listo, {{firstName}}. <span class="hl">Ya empezamos.</span></h2>
+<p style="margin:16px 0 0;font-size:20px;line-height:1.5;color:#3A3A3C;max-width:600px">Una persona de Meridian ya tiene tus respuestas. Esto es lo que pasa ahora:</p>
+</div>
+<div class="rise" style="animation-delay:.15s;width:100%;display:flex;flex-direction:column">
+<div style="display:flex;gap:20px;align-items:baseline;padding:18px 0;border-top:1px solid rgba(29,29,31,0.14)"><span style="flex:none;width:130px;font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">Hoy</span><span style="font-size:18px;line-height:1.45">Revisamos tu Instagram, tu sitio y cómo contestan hoy.</span></div>
+<div style="display:flex;gap:20px;align-items:baseline;padding:18px 0;border-top:1px solid rgba(29,29,31,0.14)"><span style="flex:none;width:130px;font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">En {{days}}</span><span style="font-size:18px;line-height:1.45">Tu demo llega a tu WhatsApp: diagnóstico, conversación de ejemplo y plan de arranque.</span></div>
+<div style="display:flex;gap:20px;align-items:baseline;padding:18px 0;border-top:1px solid rgba(29,29,31,0.14);border-bottom:1px solid rgba(29,29,31,0.14)"><span style="flex:none;width:130px;font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">Después</span><span style="font-size:18px;line-height:1.45">Una llamada de 20 minutos. Si te gusta, empezamos en 5 días con tu primer mes gratis y el segundo con 30% de descuento.</span></div>
+</div>
+<div class="rise" style="animation-delay:.3s;display:flex;flex-wrap:wrap;gap:8px">
+<sc-for list="{{summary}}" as="s" hint-placeholder-count="4"><span style="background:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.85);box-shadow:inset 0 1px 0 #fff;padding:8px 14px;border-radius:980px;font-size:14px">{{s}}</span></sc-for>
+</div>
+<div class="rise" style="animation-delay:.45s;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center">
+<a href="https://ig.me/m/_meridianmarketing" style="background:{{accent}};color:#fff;font-size:17px;font-weight:600;padding:0 26px;border-radius:980px;min-height:50px;display:inline-flex;align-items:center;box-shadow:0 12px 30px rgba(155,34,38,0.35);text-decoration:none">Mientras tanto, síguenos en Instagram</a>
+<a href="/" style="font-size:17px;min-height:44px;display:inline-flex;align-items:center">&#8249; Volver al sitio</a>
+</div>
+</div>
+</sc-if>
+
+</div>
+<div style="font-size:13px;color:#6E6E73;text-align:center;margin-top:16px">Revisamos cada solicitud personalmente. Aceptamos {{capacity}} clínicas nuevas al mes.</div>
+</main>
+</div>
+</div>
+</template>
+<div id="dc-root"></div>
+<noscript><p style="padding:24px;font-family:sans-serif">Activa JavaScript para ver este sitio, o escríbenos por Instagram: @_meridianmarketing</p></noscript>
+</body>
+</html>

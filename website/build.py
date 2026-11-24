@@ -112,7 +112,7 @@ index = HEAD.format(
   </ul>
 </main>
 """ + FOOT
-open('investigaciones/index.html','w',encoding='utf-8').write(index)
+open('site/investigaciones/index.html','w',encoding='utf-8').write(index)
 
 # ---------------- study ----------------
 study = HEAD.format(
@@ -174,5 +174,5 @@ study = HEAD.format(
   </div>
 </main>
 """ + FOOT
-open('investigaciones/camino-del-paciente-tijuana-2026-11/index.html','w',encoding='utf-8').write(study)
+open('site/investigaciones/camino-del-paciente-tijuana-2026-11/index.html','w',encoding='utf-8').write(study)
 print("built 2 pages")

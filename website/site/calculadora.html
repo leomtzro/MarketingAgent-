@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora: cuánto te cuesta cada mensaje sin cita | Meridian</title>
+<meta name="description" content="Tres números de tu clínica, un resultado en pesos: calcula cuánto dinero se va cada mes en mensajes de pacientes que no terminan en cita.">
+<link rel="canonical" href="/calculadora">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculadora: cuánto te cuesta cada mensaje sin cita | Meridian">
+<meta property="og:description" content="Tres números de tu clínica, un resultado en pesos: calcula cuánto dinero se va cada mes en mensajes de pacientes que no terminan en cita.">
+<meta property="og:image" content="/img/og.jpg">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#9B2226">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+h1,h2{font-family:'Fraunces',Georgia,serif !important;font-weight:700 !important;letter-spacing:-0.022em !important;font-variation-settings:'SOFT' 0,'WONK' 0}
+.hl{background:linear-gradient(transparent 60%,#EFC9C6 60%);padding:0 .06em}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Inter',system-ui,sans-serif;background:#F5F5F7;color:#1d1d1f;-webkit-font-smoothing:antialiased}
+a{color:#9B2226;text-decoration:none}a:hover{text-decoration:underline}
+.glass{background:linear-gradient(135deg,rgba(255,255,255,0.62),rgba(255,255,255,0.30));backdrop-filter:blur(26px) saturate(180%);-webkit-backdrop-filter:blur(26px) saturate(180%);border:1px solid rgba(255,255,255,0.65);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95),inset 0 -1px 0 rgba(255,255,255,0.3),0 24px 60px rgba(80,20,22,0.10);border-radius:4px}
+.glassd{background:#FFFFFF;backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border:1px solid rgba(0,0,0,0.1);box-shadow:0 10px 36px rgba(0,0,0,0.06);border-radius:4px;color:#1D1D1F}
+.nl{color:#1D1D1F;font-size:13px;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent}
+.nl:hover{text-decoration:none;border-bottom-color:rgba(255,255,255,0.5)}
+.nl.on{border-bottom-color:#1D1D1F;font-weight:600}
+input[type=range]{width:100%;height:44px;margin:0}
+a:focus-visible,input:focus-visible,button:focus-visible{outline:3px solid #9B2226;outline-offset:2px}
+.slide{position:relative;width:min(100%,clamp(300px,34vw,440px));height:60px;border-radius:999px;background:linear-gradient(135deg,#9B2226,#6A1218);box-shadow:inset 0 1px 0 rgba(255,255,255,0.28),inset 0 -1px 0 rgba(0,0,0,0.2),0 14px 34px rgba(155,34,38,0.32);overflow:hidden;user-select:none;-webkit-user-select:none;box-sizing:border-box;flex:none;--x:0px;--p:0}
+.slide::before{content:"";position:absolute;top:0;left:0;bottom:0;width:calc(var(--x) + 60px);background:rgba(255,255,255,0.14);border-radius:999px;transition:width .4s cubic-bezier(.2,.8,.2,1)}
+.slide>a{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-left:56px;font-size:16px;font-weight:600;letter-spacing:-0.01em;text-decoration:none !important;color:#fff;opacity:calc(1 - var(--p) * 1.5);background:linear-gradient(90deg,rgba(255,255,255,.5) 0%,#fff 40%,rgba(255,255,255,.5) 80%) 0 0/200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:slshine 3s linear infinite}
+.slide .knob{position:absolute;top:4px;left:4px;width:52px;height:52px;border-radius:50%;background:#fff;color:#9B2226;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.28);transform:translateX(var(--x));transition:transform .4s cubic-bezier(.2,.8,.2,1);cursor:grab;touch-action:none;z-index:2}
+.slide:hover .knob{animation:slnudge 1.3s ease-in-out infinite}
+.slide.drag::before,.slide.drag .knob{transition:none;animation:none}
+.slide.drag .knob{cursor:grabbing}
+@keyframes slshine{to{background-position:-200% 0}}
+@keyframes slnudge{50%{margin-left:7px}}
+@media (prefers-reduced-motion:reduce){.slide>a,.slide .knob{animation:none}}
+.igb:hover{background:#9B2226 !important;text-decoration:none !important}
+</style>
+<style>
+@media (max-width:600px){
+  nav.glass{padding:6px 8px 6px 16px !important;row-gap:0 !important}
+  nav.glass>:first-child{order:1}
+  nav.glass>.igb{order:2;padding:0 14px !important;font-size:0 !important;gap:0 !important}
+  nav.glass>.igb svg{width:20px;height:20px}
+  nav.glass>:nth-child(2){order:3;width:100%;justify-content:space-between;gap:0 12px !important}
+}
+</style>
+<script src="/js/morphdom.min.js" defer></script>
+<script src="/js/dc-lite.js" defer></script>
+<script src="/js/calculadora.js" defer></script>
+</head>
+<body>
+<template id="dc-tpl">
+
+<div style="width:100%;display:flex;flex-direction:column;background:radial-gradient(1100px 700px at 88% -8%,rgba(155,34,38,0.20),transparent 60%),radial-gradient(900px 650px at -5% 22%,rgba(239,201,198,0.60),transparent 62%),radial-gradient(1000px 800px at 100% 62%,rgba(155,34,38,0.10),transparent 60%),radial-gradient(900px 700px at 10% 92%,rgba(239,201,198,0.45),transparent 60%),#F7F4F0">
+<header style="position:relative;z-index:1;isolation:isolate;color:#1D1D1F;display:flex;flex-direction:column;align-items:center">
+<nav class="glass" style="position:sticky;top:12px;z-index:20;margin-top:14px;border-radius:4px;width:calc(100% - 32px);max-width:1080px;box-sizing:border-box;padding:0 10px 0 24px;min-height:60px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px">
+<a href="/" style="display:flex;align-items:center;gap:8px;font-size:17px;font-weight:600;letter-spacing:-0.02em;color:#1D1D1F;min-height:44px"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#9B2226" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="11" stroke-width="1.6"/><ellipse cx="16" cy="16" rx="14.500" ry="5.500" transform="rotate(-22 16 16)" stroke-width="1.6"/><path d="M13 3l6 26M4 16h24" stroke-width="1" opacity="0.85"/></svg>Meridian</a>
+<div style="display:flex;flex-wrap:wrap;gap:0 28px"><a href="/calculadora" class="nl on">Calculadora</a><a href="/metodologia" class="nl">Metodología</a><a href="/investigaciones" class="nl">Investigaciones</a><a href="/demo" class="nl">Demo</a></div>
+<a class="igb" aria-label="Instagram" href="https://ig.me/m/_meridianmarketing" style="color:#fff;background:#1D1D1F;transition:background .25s ease;font-size:14px;padding:0 20px;border-radius:980px;min-height:44px;display:inline-flex;align-items:center;gap:8px;box-sizing:border-box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.500 6.500h.01"/></svg>Instagram</a>
+</nav>
+<section style="width:100%;max-width:1080px;box-sizing:border-box;padding:56px 24px 40px;display:flex;flex-direction:column;gap:20px">
+<div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">Calculadora</div>
+<h1 style="margin:0;font-size:clamp(40px,6.5vw,80px);line-height:1;font-weight:700;letter-spacing:-0.04em;max-width:900px">Cuánto te cuesta cada mensaje sin cita.</h1>
+<p style="margin:0;font-size:clamp(19px,2.2vw,24px);line-height:1.35;color:#6E6E73;max-width:720px">Tres números de tu clínica, un resultado en pesos. Mueve los controles y ve cómo cambia lo que hoy dejas ir.</p>
+</section>
+</header>
+<div style="position:relative;margin-top:0;padding-top:0;background:transparent;display:flex;flex-direction:column">
+<!-- CALCULADORA -->
+<section id="calc" style="position:relative;isolation:isolate;display:flex;justify-content:center;padding:clamp(56px,7vw,96px) 24px;margin:24px 0 56px">
+<div aria-hidden="true" style="position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none"><div style="position:absolute;width:560px;height:560px;left:4%;top:-140px;border-radius:50%;background:radial-gradient(circle,rgba(155,34,38,0.40),transparent 65%)"></div><div style="position:absolute;width:680px;height:680px;right:-6%;bottom:-260px;border-radius:50%;background:radial-gradient(circle,rgba(232,137,140,0.50),transparent 65%)"></div></div>
+<div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0.56),rgba(255,255,255,0.30));backdrop-filter:blur(44px) saturate(180%);-webkit-backdrop-filter:blur(44px) saturate(180%);border-top:1px solid rgba(255,255,255,0.9);border-bottom:1px solid rgba(255,255,255,0.55);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),inset 0 -1px 0 rgba(155,34,38,0.08)"></div>
+<div style="box-sizing:border-box;width:100%;max-width:1080px;display:flex;flex-direction:column;gap:40px">
+<div style="max-width:760px"><h2 style="margin:0;font-size:clamp(30px,4vw,48px);line-height:1.08;font-weight:700;letter-spacing:-0.03em">Cada mensaje sin cita es un paciente que se fue con otra clínica.</h2></div>
+<div style="padding:clamp(0px,2vw,16px) 0;display:flex;flex-wrap:wrap;gap:56px">
+<div style="flex:1 1 340px;display:flex;flex-direction:column;gap:28px">
+<div><label for="v" style="display:flex;justify-content:space-between;font-size:17px;font-weight:600"><span>Lo que deja un paciente nuevo</span><span style="color:#9B2226">${{valueText}} MXN</span></label>
+<input id="v" type="range" min="1000" max="100000" step="1000" value="{{value}}" onInput="{{setValue}}" style="accent-color:{{accent}}"></div>
+<div><label for="q" style="display:flex;justify-content:space-between;font-size:17px;font-weight:600"><span>Mensajes que recibes al mes</span><span style="color:#9B2226">{{inquiries}}</span></label>
+<input id="q" type="range" min="10" max="600" step="10" value="{{inquiries}}" onInput="{{setInquiries}}" style="accent-color:{{accent}}"></div>
+<div><label for="r" style="display:flex;justify-content:space-between;font-size:17px;font-weight:600"><span>Los que terminan agendando</span><span style="color:#9B2226">{{rate}}%</span></label>
+<input id="r" type="range" min="5" max="90" step="5" value="{{rate}}" onInput="{{setRate}}" style="accent-color:{{accent}}"></div>
+<div style="font-size:13px;color:#6E6E73">Ajusta los tres con tus cifras reales.</div>
+</div>
+<div style="flex:1 1 340px;display:flex;flex-direction:column;justify-content:center;gap:8px">
+<div style="font-size:17px;color:#6E6E73">Hoy dejas ir cada mes, en promedio</div>
+<div style="font-size:clamp(48px,7vw,88px);font-weight:700;letter-spacing:-0.04em;line-height:1;color:#9B2226">${{lostPesos}}</div>
+<div style="font-size:17px;color:#6E6E73">pesos: <b>{{lost}}</b> mensajes sin cita, por lo que deja un paciente, por tu tasa actual.</div>
+<div style="font-size:17px;color:#6E6E73;margin-top:12px">Y cada 10 puntos más de pacientes agendados valen <b>${{gain}}</b> pesos al año.</div>
+<div style="font-size:13px;color:#6E6E73;margin-top:8px">Aritmética simple con tus números. Tu cifra real la medimos y te la mostramos cada mes.</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<section style="display:flex;justify-content:center;padding:0 24px 112px">
+<div style="width:100%;max-width:1080px;box-sizing:border-box;padding:8px 0;display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between">
+<div style="flex:1 1 340px"><div style="font-size:clamp(26px,3.2vw,40px);font-weight:700;letter-spacing:-0.03em;line-height:1.1">Ahora mira cómo se recupera ese dinero.</div><div style="font-size:17px;color:#6E6E73;margin-top:10px;line-height:1.4">Te mandamos cómo le contestaríamos a un paciente de tu especialidad, en un día hábil y gratis.</div></div>
+<div class="slide"><a href="/demo">Desliza para tu demo</a><div class="knob" aria-hidden="true" onPointerDown="{{slideStart}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
+</div>
+</section>
+<footer style="background:#111316;color:#A1A1A6;display:flex;justify-content:center;padding:32px 24px">
+<div style="width:100%;max-width:1080px;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;font-size:13px;color:#A1A1A6">
+<span>&copy; 2026 Meridian. Todos los derechos reservados.</span>
+<span style="display:flex;gap:20px"><a href="/aviso-de-privacidad" style="color:#A1A1A6">Aviso de privacidad</a><span>Tijuana, Baja California</span></span>
+</div>
+</footer>
+</div>
+</div>
+</template>
+<div id="dc-root"></div>
+<noscript><p style="padding:24px;font-family:sans-serif">Activa JavaScript para ver este sitio, o escríbenos por Instagram: @_meridianmarketing</p></noscript>
+</body>
+</html>
