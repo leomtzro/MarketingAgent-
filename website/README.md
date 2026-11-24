@@ -4,6 +4,13 @@
 24 de noviembre de 2026**, con tres cambios aplicados.
 
 ## Qué cambió
+0. **Layout: texto a la izquierda, visual a la derecha** en toda la portada.
+   - Hero: dos columnas (copy izquierda / demo de WhatsApp derecha), con la foto de la
+     doctora de fondo a página completa, degradado para que el texto se lea y
+     desvanecido abajo para que no corte duro. Título bajado a `clamp(40px,5.1vw,74px)`
+     para que entre en dos líneas en la columna angosta.
+   - `#calc` (calculadora) y `#metodo` (las tres razones): mismo patrón con `.split`.
+   - A 900 px o menos todo se apila, texto primero.
 1. **Tipografía → Fraunces** en títulos (`SOFT 0`, `WONK 0`), Inter en cuerpo.
    En las 4 páginas: el `<link>` de Inter Tight, la regla `h1,h2{}` y 15 declaraciones
    `font-family` en línea (h3 y numerales de pasos).
