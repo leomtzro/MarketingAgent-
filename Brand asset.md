@@ -23,3 +23,11 @@ Related: [[Brand vs marketing]], [[Second-slide customers]].
 
 ## Open
 We have no buyers yet to ask. See [[Open questions - Hoffman notes]].
+
+## Tipografía (decidida 2026-11-24)
+- **Display: Fraunces** (Google Fonts, OFL, gratis). `SOFT 0`, `WONK 0` para que no se vuelva caricaturesca.
+- **Cuerpo: Inter.**
+- Por qué: todo competidor local usa una grotesca genérica. Una serif editorial sobre cuerpo sans
+  es la gramática visual de quien publica hallazgos, y eso es exactamente lo que vendemos.
+- Aplicada en: sitio (Investigaciones), los dos diagnósticos en PDF, el reel, los cuatro carruseles
+  y las portadas de Facebook. Las otras 4 páginas del sitio siguen en Inter Tight: falta el cambio.
