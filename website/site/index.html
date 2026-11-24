@@ -69,6 +69,16 @@ input[type=range]{width:100%;height:44px;margin:0}
  .hero2,.split{grid-template-columns:1fr}
  .heroBrand::after{background:linear-gradient(180deg,rgba(245,245,247,.96) 0%,rgba(245,245,247,.93) 60%,rgba(245,245,247,.86) 100%)}
 }
+
+/* --- correcciones de auditoría UI/UX (24 nov 2026) --- */
+nav a{display:inline-flex;align-items:center;min-height:44px}
+footer a{display:inline-flex;align-items:center;min-height:24px}
+.tapfix{display:inline-flex;align-items:center;min-height:44px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #9B2226;outline-offset:2px}
+@media(max-width:500px){.cap,.note-sm{font-size:14px}}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
+ transition-duration:.01ms !important;scroll-behavior:auto !important}}
 </style>
 <style>
 @media (max-width:600px){
@@ -94,7 +104,7 @@ input[type=range]{width:100%;height:44px;margin:0}
 <div style="display:flex;align-items:center;gap:8px;font-size:17px;font-weight:600;letter-spacing:-0.02em">
 <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#9B2226" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="16" r="11" stroke-width="1.6"></circle><ellipse cx="16" cy="16" rx="14.500" ry="5.500" transform="rotate(-22 16 16)" stroke-width="1.6"></ellipse><path d="M13 3l6 26M4 16h24" stroke-width="1" opacity="0.85"></path></svg>Meridian</div>
 <div style="display:flex;flex-wrap:wrap;gap:4px 28px;font-size:13px">
-<a href="/calculadora" style="color:#1D1D1F">Calculadora</a><a href="/metodologia" style="color:#1D1D1F">Metodología</a><a href="/investigaciones" style="color:#1D1D1F">Investigaciones</a><a href="/demo" style="color:#1D1D1F">Demo</a>
+<a class="nl" href="/calculadora" style="color:#1D1D1F">Calculadora</a><a class="nl" href="/metodologia" style="color:#1D1D1F">Metodología</a><a class="nl" href="/investigaciones" style="color:#1D1D1F">Investigaciones</a><a class="nl" href="/demo" style="color:#1D1D1F">Demo</a>
 </div>
 <a class="igb" aria-label="Instagram" href="https://ig.me/m/_meridianmarketing" style="color:#fff;background:#1D1D1F;transition:background .25s ease;font-size:14px;padding:0 20px;border-radius:980px;min-height:44px;display:inline-flex;align-items:center;gap:8px;box-sizing:border-box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.500 6.500h.01"></path></svg>Instagram</a>
 </nav>
@@ -105,7 +115,7 @@ input[type=range]{width:100%;height:44px;margin:0}
 
 <div style="display:flex;flex-wrap:wrap;gap:16px 28px;margin-top:36px;align-items:center;justify-content:center">
 <div class="slide"><a href="/demo">Desliza para tu demo</a><div class="knob" aria-hidden="true" onPointerDown="{{slideStart}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
-<a href="#calc" style="font-size:19px;color:#9B2226">¿Cuánto te cuesta no contestar a tiempo? ›</a>
+<a class="tapfix" href="#calc" style="font-size:19px;color:#9B2226">¿Cuánto te cuesta no contestar a tiempo? ›</a>
 </div>
 <div style="margin-top:16px;font-size:14px;color:#6E6E73">4 minutos hoy. Tu demo por WhatsApp en 1 día hábil.</div>
 
@@ -208,12 +218,12 @@ input[type=range]{width:100%;height:44px;margin:0}
 <img src="/img/doctora-tijuana.jpg" alt="Doctora en su consultorio en Tijuana revisando mensajes en su teléfono, con el Arco de Tijuana al fondo" style="flex-basis:100%;width:100%;aspect-ratio:21/9;min-height:240px;object-fit:cover;object-position:60% 45%;border-radius:4px;display:block;box-shadow:0 30px 80px rgba(80,20,22,0.18)">
 <div style="flex:1 1 280px;padding:8px 32px 8px 0;box-sizing:border-box;display:flex;flex-direction:column;gap:14px">
 <div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">Para quién es</div>
-<h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-variation-settings:'SOFT' 0,'WONK' 0;font-weight:700;font-size:34px;line-height:1.08;letter-spacing:-0.02em">Clínicas privadas que reciben más mensajes de los que alcanzan a contestar.</h3>
+<h2 style="margin:0;font-size:34px;line-height:1.08">Clínicas privadas que reciben más mensajes de los que alcanzan a contestar.</h2>
 <p style="margin:0;font-size:17px;line-height:1.5;color:#3A3A3C">Dentistas, cirujanos, dermatólogos, bariatras y clínicas estéticas en Tijuana y Baja California que consiguen pacientes por WhatsApp, Instagram o Google, y saben que se les escapan.</p>
 </div>
 <div style="flex:1 1 280px;padding:8px 32px 8px 0;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;border-left:1px solid rgba(29,29,31,0.14);padding-left:32px;">
 <div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">Qué recibes</div>
-<h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-variation-settings:'SOFT' 0,'WONK' 0;font-weight:700;font-size:34px;line-height:1.08;letter-spacing:-0.02em">Un equipo que atrae, contesta y agenda por ti.</h3>
+<h2 style="margin:0;font-size:34px;line-height:1.08">Un equipo que atrae, contesta y agenda por ti.</h2>
 <div style="display:flex;gap:10px;font-size:17px;line-height:1.45"><span style="color:#9B2226;font-weight:700">—</span><span>Contenido real y cuidado para tu Instagram</span></div>
 <div style="display:flex;gap:10px;font-size:17px;line-height:1.45"><span style="color:#9B2226;font-weight:700">—</span><span>Respuesta en menos de 5 minutos, en el horario acordado</span></div>
 <div style="display:flex;gap:10px;font-size:17px;line-height:1.45"><span style="color:#9B2226;font-weight:700">—</span><span>Citas agendadas, recordatorios y seguimiento</span></div>
@@ -221,7 +231,7 @@ input[type=range]{width:100%;height:44px;margin:0}
 </div>
 <div style="flex:1 1 280px;padding:8px 32px 8px 0;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;border-left:1px solid rgba(29,29,31,0.14);padding-left:32px;">
 <div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226">Qué sigue</div>
-<h3 style="margin:0;font-family:'Fraunces',Georgia,serif;font-variation-settings:'SOFT' 0,'WONK' 0;font-weight:700;font-size:34px;line-height:1.08;letter-spacing:-0.02em">Cuatro pasos, sin compromiso.</h3>
+<h2 style="margin:0;font-size:34px;line-height:1.08">Cuatro pasos, sin compromiso.</h2>
 <div style="display:flex;gap:12px;font-size:17px;line-height:1.45"><span style="font-family:'Fraunces',Georgia,serif;font-variation-settings:'SOFT' 0,'WONK' 0;font-weight:700;letter-spacing:-0.02em;font-size:24px;line-height:1;color:#9B2226">1</span><span>Llenas el cuestionario: 4 minutos.</span></div>
 <div style="display:flex;gap:12px;font-size:17px;line-height:1.45"><span style="font-family:'Fraunces',Georgia,serif;font-variation-settings:'SOFT' 0,'WONK' 0;font-weight:700;letter-spacing:-0.02em;font-size:24px;line-height:1;color:#9B2226">2</span><span>En 1 día hábil recibes tu demo por WhatsApp.</span></div>
 <div style="display:flex;gap:12px;font-size:17px;line-height:1.45"><span style="font-family:'Fraunces',Georgia,serif;font-variation-settings:'SOFT' 0,'WONK' 0;font-weight:700;letter-spacing:-0.02em;font-size:24px;line-height:1;color:#9B2226">3</span><span>Llamada de 20 minutos para revisarla.</span></div>
@@ -324,7 +334,7 @@ input[type=range]{width:100%;height:44px;margin:0}
 <!-- CIERRE -->
 <section style="display:flex;justify-content:center;padding:0 24px 72px">
 <div style="width:100%;max-width:1080px;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between">
-<div style="font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-0.03em;line-height:1.1;max-width:560px">Cuatro minutos hoy. Tu demo, hecha para tu clínica.<div style="font-family:inherit;font-size:16px;font-weight:400;letter-spacing:0;line-height:1.45;color:#6E6E73;margin-top:10px">¿Prefieres escribirnos? <a href="https://ig.me/m/_meridianmarketing">Mándanos un mensaje por Instagram</a>.</div></div>
+<div style="font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-0.03em;line-height:1.1;max-width:560px">Cuatro minutos hoy. Tu demo, hecha para tu clínica.<div style="font-family:inherit;font-size:16px;font-weight:400;letter-spacing:0;line-height:1.45;color:#6E6E73;margin-top:10px">¿Prefieres escribirnos? <a class="tapfix" href="https://ig.me/m/_meridianmarketing">Mándanos un mensaje por Instagram</a>.</div></div>
 <div class="slide"><a href="/demo">Desliza para tu demo</a><div class="knob" aria-hidden="true" onPointerDown="{{slideStart}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
 </div>
 </section>

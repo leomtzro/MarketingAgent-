@@ -29,6 +29,9 @@ a{color:#9B2226;text-decoration:none}a:hover{text-decoration:underline}
 .nl:hover{text-decoration:none;border-bottom-color:rgba(255,255,255,0.5)}
 .nl.on{border-bottom-color:#1D1D1F;font-weight:600}
 a:focus-visible,button:focus-visible{outline:3px solid #9B2226;outline-offset:2px}
+nav a{display:inline-flex;align-items:center;min-height:44px}
+footer a{display:inline-flex;align-items:center;min-height:24px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}}
 .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 24px;box-sizing:border-box}
 .eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#9B2226;margin:0 0 14px}
 .lede{font-size:19px;line-height:1.55;color:#3A3A3C;max-width:62ch;margin:18px 0 0}
@@ -36,7 +39,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #9B2226;outline-offset:2p
 .meta b{color:#1D1D1F;font-weight:600}
 .card{display:block;padding:28px;margin-top:18px;color:inherit}
 .card:hover{text-decoration:none;box-shadow:0 14px 44px rgba(0,0,0,0.09)}
-.card h3{margin:10px 0 0;font-size:25px;line-height:1.2}
+.card h2{margin:10px 0 0;font-size:25px;line-height:1.2}
 .figs{display:flex;flex-wrap:wrap;gap:10px 34px;margin-top:20px}
 .fig b{display:block;font-family:'Fraunces',Georgia,serif;font-size:34px;font-weight:700;letter-spacing:-.04em;color:#9B2226;line-height:1}
 .fig span{font-size:12.5px;color:#6E6E73}
@@ -61,12 +64,12 @@ ul{max-width:66ch;padding-left:20px} li{font-size:16.5px;line-height:1.6;color:#
 <div style="display:flex;flex-wrap:wrap;gap:4px 28px;font-size:13px">
 <a class="nl" href="/calculadora">Calculadora</a><a class="nl" href="/metodologia">Metodología</a><a class="nl on" href="/investigaciones">Investigaciones</a><a class="nl" href="/demo">Demo</a>
 </div>
-<a class="igb" aria-label="Instagram" href="https://ig.me/m/_meridianmarketing" style="color:#fff;background:#1D1D1F;font-size:14px;padding:0 20px;min-height:44px;display:inline-flex;align-items:center;border-radius:4px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:7px"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>Instagram</a>
+<a class="igb" aria-label="Instagram" href="https://ig.me/m/_meridianmarketing" style="color:#fff;background:#1D1D1F;font-size:14px;padding:0 20px;min-height:44px;display:inline-flex;align-items:center;border-radius:4px">Escríbenos</a>
 </nav>
 </div>
 
 <main class="wrap" style="padding-top:64px">
-  <p class="eyebrow"><a href="/investigaciones" style="color:#9B2226">Investigaciones</a> &nbsp;/&nbsp; Estudio 01</p>
+  <p class="eyebrow"><a href="/investigaciones" style="color:#9B2226;display:inline-flex;align-items:center;min-height:24px">Investigaciones</a> &nbsp;/&nbsp; Estudio 01</p>
   <h1 style="font-size:46px;line-height:1.08;margin:0;max-width:19ch">El camino del paciente en Tijuana.</h1>
   <p class="lede">Cuarenta clínicas que pagan anuncios en Meta. Les escribimos como pacientes y seguimos el recorrido completo, desde el anuncio hasta el mensaje. El anuncio casi siempre funciona. Lo que sigue, no.</p>
   <div class="meta">

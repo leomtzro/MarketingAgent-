@@ -41,6 +41,16 @@ a:focus-visible,input:focus-visible,button:focus-visible{outline:3px solid #9B22
 @keyframes slnudge{50%{margin-left:7px}}
 @media (prefers-reduced-motion:reduce){.slide>a,.slide .knob{animation:none}}
 .igb:hover{background:#9B2226 !important;text-decoration:none !important}
+
+/* --- correcciones de auditoría UI/UX (24 nov 2026) --- */
+nav a{display:inline-flex;align-items:center;min-height:44px}
+footer a{display:inline-flex;align-items:center;min-height:24px}
+.tapfix{display:inline-flex;align-items:center;min-height:44px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid #9B2226;outline-offset:2px}
+@media(max-width:500px){.cap,.note-sm{font-size:14px}}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;
+ transition-duration:.01ms !important;scroll-behavior:auto !important}}
 </style>
 <style>
 @media (max-width:600px){
