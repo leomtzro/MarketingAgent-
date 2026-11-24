@@ -56,9 +56,9 @@ input[type=range]{width:100%;height:44px;margin:0}
 .dk .hl{background:linear-gradient(transparent 62%,rgba(155,34,38,0.95) 62%)}
 .dk a{color:#fff}
 
-.heroBG{position:relative;isolation:isolate;overflow:hidden}
-.heroBG::before{content:"";position:absolute;inset:0;z-index:-2;background:url(/img/doctora-tijuana.jpg) 68% 26% / cover no-repeat;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 72%,transparent 100%)}
-.heroBG::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,#F5F5F7 0%,rgba(245,245,247,.96) 34%,rgba(245,245,247,.72) 56%,rgba(245,245,247,.34) 100%)}
+.heroBrand{position:relative;isolation:isolate;overflow:hidden}
+.heroBrand::before{content:"";position:absolute;inset:0;z-index:-2;background:url(/img/doctora-tijuana.jpg) 68% 26% / cover no-repeat;-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 0%,#000 78%,transparent 100%)}
+.heroBrand::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(245,245,247,.97) 0%,rgba(245,245,247,.90) 34%,rgba(245,245,247,.58) 60%,rgba(245,245,247,.20) 100%)}
 .hero2{width:100%;max-width:1180px;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,540px);gap:clamp(28px,4vw,60px);align-items:center;text-align:left}
 .heroL{display:flex;flex-direction:column;align-items:flex-start;text-align:left}
 .heroL .slide{margin-left:0}
@@ -67,7 +67,7 @@ input[type=range]{width:100%;height:44px;margin:0}
 .split .splitL h2{max-width:18ch}
 @media(max-width:900px){
  .hero2,.split{grid-template-columns:1fr}
- .heroBG::after{background:linear-gradient(180deg,rgba(245,245,247,.96) 0%,rgba(245,245,247,.93) 60%,rgba(245,245,247,.86) 100%)}
+ .heroBrand::after{background:linear-gradient(180deg,rgba(245,245,247,.96) 0%,rgba(245,245,247,.93) 60%,rgba(245,245,247,.86) 100%)}
 }
 </style>
 <style>
@@ -99,10 +99,10 @@ input[type=range]{width:100%;height:44px;margin:0}
 <a class="igb" aria-label="Instagram" href="https://ig.me/m/_meridianmarketing" style="color:#fff;background:#1D1D1F;transition:background .25s ease;font-size:14px;padding:0 20px;border-radius:980px;min-height:44px;display:inline-flex;align-items:center;gap:8px;box-sizing:border-box"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.500 6.500h.01"></path></svg>Instagram</a>
 </nav>
 
-<section class="heroBG" style="width:100%;box-sizing:border-box;padding:clamp(40px,5vw,76px) 24px clamp(20px,2.5vw,36px);display:flex;justify-content:center"><div class="hero2"><div class="heroL">
-<div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226;margin-bottom:16px">Agencia de marketing médico en Tijuana y Baja California</div>
-<h1 style="margin:0;font-size:clamp(40px,5.1vw,74px);line-height:1.02;font-weight:700;letter-spacing:-0.022em;max-width:13ch">Llenamos agendas. <span class="hl">Generas ingresos.</span></h1>
-<p style="margin:28px 0 0;font-size:clamp(17px,1.5vw,21px);line-height:1.45;color:#6E6E73;max-width:46ch">Construimos tu marca para que te busquen. Contestamos y agendamos a quien te escribe. Y nos metemos hasta la cocina para que funcione.</p>
+<section class="heroBrand" style="width:100%;box-sizing:border-box;display:flex;justify-content:center;align-items:center;padding:clamp(88px,15vh,172px) 24px clamp(80px,13vh,156px)"><div style="width:100%;max-width:1180px"><h1 style="margin:0;font-size:clamp(38px,5.6vw,80px);line-height:1.02;font-weight:700;letter-spacing:-0.024em;max-width:14ch">Meridian Medical Marketing</h1><p style="margin:18px 0 0;font-size:clamp(17px,1.9vw,25px);line-height:1.35;color:#3A3A3C;font-weight:500">Agencia de Growth Marketing</p></div></section><section class="heroBand" style="width:100%;box-sizing:border-box;padding:clamp(40px,5vw,72px) 24px clamp(24px,3vw,40px);display:flex;justify-content:center"><div class="hero2"><div class="heroL">
+<div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9B2226;margin-bottom:16px">Agencia de marketing médico en Tijuana y Baja California</div><p style="margin:0 0 4px;font-size:clamp(17px,1.5vw,21px);line-height:1.45;color:#6E6E73;max-width:46ch">Construimos tu marca para que te busquen. Contestamos y agendamos a quien te escribe. Y trabajamos dentro de tu operación hasta que funcione.</p>
+
+
 <div style="display:flex;flex-wrap:wrap;gap:16px 28px;margin-top:36px;align-items:center;justify-content:center">
 <div class="slide"><a href="/demo">Desliza para tu demo</a><div class="knob" aria-hidden="true" onPointerDown="{{slideStart}}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div></div>
 <a href="#calc" style="font-size:19px;color:#9B2226">¿Cuánto te cuesta no contestar a tiempo? ›</a>
@@ -274,10 +274,10 @@ input[type=range]{width:100%;height:44px;margin:0}
 <section id="solicitar" class="dk" style="position:relative;isolation:isolate;overflow:hidden;display:flex;justify-content:center;padding:clamp(64px,8vw,112px) 24px;color:#FFFFFF;background:radial-gradient(800px 500px at 90% 0%,rgba(155,34,38,0.38),transparent 60%),radial-gradient(700px 480px at 0% 100%,rgba(255,255,255,0.06),transparent 60%),linear-gradient(135deg,#1B1B1E,#0E0E10);border-top:1px solid rgba(255,255,255,0.08)">
 <div style="width:100%;max-width:1080px;box-sizing:border-box;display:flex;flex-direction:column;gap:28px">
 <div style="font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#F2A7A9">Tu demo gratis</div>
-<h2 style="margin:0;font-size:clamp(44px,6.5vw,88px);line-height:.98;max-width:880px">Mira a Meridian trabajando <span class="hl">para tu clínica.</span></h2>
+<h2 style="margin:0;font-size:clamp(38px,5vw,66px);line-height:1.04;max-width:17ch">Mira cómo le contestaríamos <span class="hl">a un paciente tuyo.</span></h2>
 <p style="margin:0;font-size:20px;line-height:1.5;color:rgba(255,255,255,0.78);max-width:680px">En un día hábil te mandamos por WhatsApp el diagnóstico de tu Instagram, cómo le contestaríamos a un paciente de tu especialidad y qué haríamos la primera semana. Todo antes de que decidas nada.</p>
 <div style="display:flex;flex-direction:column;gap:14px">
-<div style="font-size:17px;font-weight:600">Empieza aquí: ¿qué tipo de clínica tienes?</div>
+<div style="font-size:17px;font-weight:600">Empecemos por lo tuyo: ¿qué tipo de clínica tienes?</div>
 <div style="display:flex;flex-wrap:wrap;gap:10px">
 <a href="/demo" style="min-height:52px;padding:0 22px;display:inline-flex;align-items:center;border-radius:980px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.22);box-shadow:inset 0 1px 0 rgba(255,255,255,0.18);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#FFFFFF;font-size:17px;font-weight:600;text-decoration:none">Dental</a>
 <a href="/demo" style="min-height:52px;padding:0 22px;display:inline-flex;align-items:center;border-radius:980px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.22);box-shadow:inset 0 1px 0 rgba(255,255,255,0.18);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#FFFFFF;font-size:17px;font-weight:600;text-decoration:none">Cirugía estética</a>
