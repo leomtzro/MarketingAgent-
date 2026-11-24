@@ -539,6 +539,11 @@ Fuente: Nielsen, heurística 2 (coincidencia con el mundo real).
 
 ---
 
+
+> **Niveles WCAG verificados (24 nov 2026).** 1.4.3 Contraste mínimo · AA · 1.4.11 Contraste de elementos no textuales · AA · 2.4.7 Foco visible · AA · 2.5.8 Tamaño del objetivo mínimo · AA (nuevo en 2.2) · 2.2.2 Pausar, detener, ocultar · A · 2.4.13 Apariencia del foco · AAA.
+>
+> **Cifras de contraste recalculadas** con la fórmula WCAG: `#AAAAAA` sobre blanco = **2.32:1** (no pasa), `#595959` sobre blanco = **7.00:1** (pasa AA y AAA). Y de nuestro propio sitio: `#6E6E73` sobre `#F5F5F7` = **4.66:1**, que pasa AA para texto de cuerpo por poco margen.
+
 ## Fuentes
 
 **Bibliotecas locales revisadas (esta máquina):**
