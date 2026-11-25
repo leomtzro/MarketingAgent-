@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@property --n { syntax:'<integer>'; initial-value:0; inherits:true }
+:root{ --bg:#f7f4f0; --ink:#1d1d1f; --muted:#67676c; --accent:#9b2226; --L:112px; }
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden}
+body{background:var(--bg);color:var(--ink);
+  font-family:"Inter",-apple-system,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;font-feature-settings:"ss01","tnum"}
+.rail{position:absolute;top:0;left:0;height:7px;width:100%;background:rgba(29,29,31,.08);z-index:9}
+.rail i{display:block;height:100%;background:var(--accent);width:0;animation:fill 38.5s linear forwards}
+@keyframes fill{to{width:100%}}
+@keyframes vanish{0%,86%{opacity:1}89%,100%{opacity:0}}
+.mark{position:absolute;top:84px;left:var(--L);height:62px;animation:vanish 38.5s linear both}
+.foot{position:absolute;bottom:84px;left:var(--L);font-size:27px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);font-weight:500;animation:vanish 38.5s linear both}
+.beat{position:absolute;inset:0;padding:0 var(--L);opacity:0;
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  animation:beat var(--d) both}
+@keyframes beat{0%{opacity:0;transform:translateY(26px)}6%,90%{opacity:1;transform:none}
+  100%{opacity:0;transform:translateY(-16px)}}
+.lbl{font-size:30px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:40px}
+.num{font-family:"Fraunces",Georgia,serif;font-variation-settings:'SOFT' 0,'WONK' 0;
+  font-size:250px;font-weight:700;line-height:.88;letter-spacing:-.028em;
+  color:var(--accent);font-variant-numeric:tabular-nums}
+.num::after{content:counter(v)"%";counter-reset:v var(--n);
+  animation:cnt 1.3s cubic-bezier(.2,.8,.2,1) var(--cd,0s) both}
+.num.plain::after{content:counter(v);counter-reset:v var(--n)}
+.num.frac::after{content:counter(v)" / 40";counter-reset:v var(--n);font-size:.78em}
+@keyframes cnt{from{--n:0}}
+.say{font-family:"Fraunces",Georgia,serif;font-variation-settings:'SOFT' 0,'WONK' 0;
+  font-size:70px;font-weight:600;line-height:1.14;letter-spacing:-.02em;max-width:860px;margin-top:34px}
+.say em,.big em,.q em{font-style:normal;color:var(--accent)}
+.fine{font-size:29px;color:var(--muted);margin-top:34px;line-height:1.45;font-weight:400}
+.big{font-family:"Fraunces",Georgia,serif;font-variation-settings:'SOFT' 0,'WONK' 0;
+  font-size:92px;font-weight:700;line-height:1.05;letter-spacing:-.024em;max-width:900px}
+
+/* ---- 40-cell grid ---- */
+.grid{display:grid;grid-template-columns:repeat(8,1fr);gap:18px;width:760px;margin:12px 0 10px}
+.grid i{display:block;height:74px;background:rgba(29,29,31,.10);
+  transform:scale(.4);opacity:0;animation:pop .5s cubic-bezier(.2,.9,.3,1.3) both}
+.grid i.on{background:var(--accent)}
+@keyframes pop{to{transform:scale(1);opacity:1}}
+
+/* ---- phone chat mock ---- */
+.phone{width:700px;background:#fff;border:3px solid rgba(29,29,31,.12);
+  border-radius:38px;padding:34px 30px 30px;margin-top:20px;
+  box-shadow:0 30px 60px -30px rgba(29,29,31,.35)}
+.phone .hd{font-size:26px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:600;padding-bottom:24px;border-bottom:2px solid rgba(29,29,31,.08);margin-bottom:28px}
+.bub{max-width:82%;padding:26px 30px;border-radius:26px;font-size:34px;line-height:1.35;
+  opacity:0;transform:translateY(16px);animation:rise .45s ease-out both}
+.bub.me{margin-left:auto;background:#e8f2e4;border-bottom-right-radius:8px;text-align:left}
+.bub .ts{display:block;font-size:24px;color:var(--muted);margin-top:12px;text-align:right}
+@keyframes rise{to{opacity:1;transform:none}}
+.typing{display:flex;gap:14px;padding:30px 32px;background:rgba(29,29,31,.06);
+  border-radius:26px;border-bottom-left-radius:8px;width:142px;margin-top:26px;
+  opacity:0;animation:rise .45s ease-out both}
+.typing b{width:18px;height:18px;border-radius:50%;background:var(--muted);
+  animation:blink 1.25s ease-in-out infinite both}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.nores{margin-top:30px;font-size:30px;color:var(--accent);font-weight:600;
+  letter-spacing:.04em;opacity:0;animation:rise .5s ease-out both}
+
+/* ---- broken button ---- */
+.btnwrap{margin-top:16px;width:700px}
+.wbtn{display:flex;align-items:center;justify-content:center;gap:20px;
+  background:#25a35a;color:#fff;font-size:40px;font-weight:700;
+  padding:38px 0;border-radius:20px;letter-spacing:-.01em;position:relative;overflow:hidden;
+  animation:tap 2.2s ease-in-out both}
+@keyframes tap{0%,24%{transform:scale(1)}32%{transform:scale(.965)}44%,100%{transform:scale(1)}}
+.wbtn::after{content:"";position:absolute;inset:0;background:rgba(29,29,31,.55);
+  opacity:0;animation:dim 2.2s ease-in-out both}
+@keyframes dim{0%,46%{opacity:0}62%,100%{opacity:1}}
+.err{margin-top:26px;background:rgba(155,34,38,.09);border-left:8px solid var(--accent);
+  padding:30px 34px;font-size:32px;color:var(--accent);font-weight:600;line-height:1.35;
+  opacity:0;transform:translateY(12px);animation:rise .5s ease-out both}
+
+/* ---- question beat ---- */
+.q{font-family:"Fraunces",Georgia,serif;font-variation-settings:'SOFT' 0,'WONK' 0;
+  font-size:82px;font-weight:700;line-height:1.1;letter-spacing:-.024em;max-width:856px}
+.qline{display:block;opacity:0;transform:translateY(18px);animation:rise .55s ease-out both}
+.caret{display:inline-block;width:9px;height:70px;background:var(--accent);
+  vertical-align:-11px;margin-left:12px;animation:caret .9s steps(1) infinite both}
+@keyframes caret{0%,50%{opacity:1}51%,100%{opacity:0}}
+.steps{margin-top:48px;display:grid;gap:22px}
+.steps div{font-size:36px;font-weight:500;color:var(--ink);padding-left:46px;position:relative;
+  opacity:0;transform:translateX(-14px);animation:slide .5s ease-out both}
+.steps div::before{content:"";position:absolute;left:0;top:18px;width:24px;height:4px;background:var(--accent)}
+@keyframes slide{to{opacity:1;transform:none}}
+
+.close img{height:140px;margin-bottom:56px}
+.hair{width:200px;height:4px;background:var(--accent);margin-top:50px}
+.cta{background:var(--accent)}
+.cta .big{font-size:88px;color:#f7f4f0;max-width:880px}
+.cta .big em{color:#f7f4f0;text-decoration:underline;text-decoration-thickness:6px;
+  text-underline-offset:14px;font-style:normal}
+.cta img{height:76px;margin-bottom:68px}
+.cta .follow{font-size:52px;font-weight:600;letter-spacing:-.02em;margin-top:50px;color:#f7f4f0}
+</style></head><body>
+
+<div class="rail"><i></i></div>
+<img class="mark" src="mark.png" alt="">
+<div class="foot">Meridian · Diagnóstico Tijuana</div>
+
+<!-- 1 -->
+<section class="beat " style="--d:5.30s;animation-delay:0.00s">
+  <div class="lbl">Noviembre 2026</div>
+  <div class="big">Revisamos <em>40 clínicas</em> en Tijuana.</div>
+  <div class="grid"><i class="cell on" style="animation-delay:0.55s"></i><i class="cell on" style="animation-delay:0.60s"></i><i class="cell on" style="animation-delay:0.64s"></i><i class="cell on" style="animation-delay:0.69s"></i><i class="cell on" style="animation-delay:0.73s"></i><i class="cell on" style="animation-delay:0.78s"></i><i class="cell on" style="animation-delay:0.82s"></i><i class="cell on" style="animation-delay:0.86s"></i><i class="cell on" style="animation-delay:0.91s"></i><i class="cell on" style="animation-delay:0.96s"></i><i class="cell on" style="animation-delay:1.00s"></i><i class="cell on" style="animation-delay:1.04s"></i><i class="cell on" style="animation-delay:1.09s"></i><i class="cell on" style="animation-delay:1.14s"></i><i class="cell on" style="animation-delay:1.18s"></i><i class="cell on" style="animation-delay:1.23s"></i><i class="cell on" style="animation-delay:1.27s"></i><i class="cell on" style="animation-delay:1.31s"></i><i class="cell on" style="animation-delay:1.36s"></i><i class="cell on" style="animation-delay:1.41s"></i><i class="cell on" style="animation-delay:1.45s"></i><i class="cell on" style="animation-delay:1.50s"></i><i class="cell on" style="animation-delay:1.54s"></i><i class="cell on" style="animation-delay:1.58s"></i><i class="cell on" style="animation-delay:1.63s"></i><i class="cell on" style="animation-delay:1.68s"></i><i class="cell on" style="animation-delay:1.72s"></i><i class="cell on" style="animation-delay:1.76s"></i><i class="cell on" style="animation-delay:1.81s"></i><i class="cell on" style="animation-delay:1.85s"></i><i class="cell on" style="animation-delay:1.90s"></i><i class="cell on" style="animation-delay:1.95s"></i><i class="cell on" style="animation-delay:1.99s"></i><i class="cell on" style="animation-delay:2.04s"></i><i class="cell on" style="animation-delay:2.08s"></i><i class="cell on" style="animation-delay:2.12s"></i><i class="cell on" style="animation-delay:2.17s"></i><i class="cell on" style="animation-delay:2.21s"></i><i class="cell on" style="animation-delay:2.26s"></i><i class="cell on" style="animation-delay:2.30s"></i></div>
+  <div class="fine">Todas pagan anuncios en Meta. 58 anuncios activos. Nadie fue avisado.</div>
+</section>
+
+<!-- 2 · phone -->
+<section class="beat " style="--d:6.00s;animation-delay:5.30s">
+  <div class="lbl">La prueba</div>
+  <div class="phone">
+    <div class="hd">WhatsApp · Paciente nuevo</div>
+    <div class="bub me" style="animation-delay:5.90s">Hola, buenas noches. ¿Tienen cita esta semana?
+      <span class="ts">20:00 ✓✓</span></div>
+    <div class="typing" style="animation-delay:7.30s">
+      <b style="animation-delay:7.30s"></b><b style="animation-delay:7.45s"></b><b style="animation-delay:7.60s"></b></div>
+    <div class="nores" style="animation-delay:9.20s">— sin respuesta —</div>
+  </div>
+  <div class="fine">Un mensaje normal. A las 8 de la noche. Como lo manda cualquiera.</div>
+</section>
+
+<!-- 3 · 9 de 40 -->
+<section class="beat " style="--d:6.80s;animation-delay:11.30s">
+  <div class="lbl">Dentro de la primera hora</div>
+  <div class="num frac plain" style="--n:9;--cd:11.75s"></div>
+  <div class="grid"><i class="cell on" style="animation-delay:12.60s"></i><i class="cell on" style="animation-delay:12.64s"></i><i class="cell on" style="animation-delay:12.69s"></i><i class="cell on" style="animation-delay:12.73s"></i><i class="cell on" style="animation-delay:12.78s"></i><i class="cell on" style="animation-delay:12.82s"></i><i class="cell on" style="animation-delay:12.87s"></i><i class="cell on" style="animation-delay:12.91s"></i><i class="cell on" style="animation-delay:12.96s"></i><i class="cell" style="animation-delay:13.00s"></i><i class="cell" style="animation-delay:13.05s"></i><i class="cell" style="animation-delay:13.09s"></i><i class="cell" style="animation-delay:13.14s"></i><i class="cell" style="animation-delay:13.18s"></i><i class="cell" style="animation-delay:13.23s"></i><i class="cell" style="animation-delay:13.28s"></i><i class="cell" style="animation-delay:13.32s"></i><i class="cell" style="animation-delay:13.37s"></i><i class="cell" style="animation-delay:13.41s"></i><i class="cell" style="animation-delay:13.46s"></i><i class="cell" style="animation-delay:13.50s"></i><i class="cell" style="animation-delay:13.54s"></i><i class="cell" style="animation-delay:13.59s"></i><i class="cell" style="animation-delay:13.63s"></i><i class="cell" style="animation-delay:13.68s"></i><i class="cell" style="animation-delay:13.72s"></i><i class="cell" style="animation-delay:13.77s"></i><i class="cell" style="animation-delay:13.81s"></i><i class="cell" style="animation-delay:13.86s"></i><i class="cell" style="animation-delay:13.90s"></i><i class="cell" style="animation-delay:13.95s"></i><i class="cell" style="animation-delay:13.99s"></i><i class="cell" style="animation-delay:14.04s"></i><i class="cell" style="animation-delay:14.08s"></i><i class="cell" style="animation-delay:14.13s"></i><i class="cell" style="animation-delay:14.17s"></i><i class="cell" style="animation-delay:14.22s"></i><i class="cell" style="animation-delay:14.27s"></i><i class="cell" style="animation-delay:14.31s"></i><i class="cell" style="animation-delay:14.36s"></i></div>
+  <div class="say">contestaron.<br>Seis <em>no contestaron nunca</em>.</div>
+  <div class="fine">Proyectado sobre las 40 desde 35 clínicas probadas. 9 en la primera hora, 17 entre 11 horas y 6 días.</div>
+</section>
+
+<!-- 4 · broken button -->
+<section class="beat " style="--d:6.20s;animation-delay:18.10s">
+  <div class="lbl">Pagando por nada</div>
+  <div class="big"><em>7 clínicas</em> pagan anuncios con el botón roto.</div>
+  <div class="btnwrap">
+    <div class="wbtn" style="animation-delay:18.80s">Enviar mensaje por WhatsApp</div>
+    <div class="err" style="animation-delay:20.30s">El enlace no abre ningún chat.<br>El mensaje nunca llega a nadie.</div>
+  </div>
+  <div class="fine">7 confirmadas, una por una. La más antigua lleva <b>13 meses</b> con el mismo anuncio vivo.</div>
+</section>
+
+<!-- 5 · 30 de 40 -->
+<section class="beat " style="--d:4.40s;animation-delay:24.30s">
+  <div class="lbl">Y cuando sí llegan</div>
+  <div class="num frac plain" style="--n:30;--cd:24.75s"></div>
+  <div class="grid"><i class="cell on" style="animation-delay:25.45s"></i><i class="cell on" style="animation-delay:25.48s"></i><i class="cell on" style="animation-delay:25.51s"></i><i class="cell on" style="animation-delay:25.54s"></i><i class="cell on" style="animation-delay:25.57s"></i><i class="cell on" style="animation-delay:25.60s"></i><i class="cell on" style="animation-delay:25.63s"></i><i class="cell on" style="animation-delay:25.66s"></i><i class="cell on" style="animation-delay:25.69s"></i><i class="cell on" style="animation-delay:25.72s"></i><i class="cell on" style="animation-delay:25.75s"></i><i class="cell on" style="animation-delay:25.78s"></i><i class="cell on" style="animation-delay:25.81s"></i><i class="cell on" style="animation-delay:25.84s"></i><i class="cell on" style="animation-delay:25.87s"></i><i class="cell on" style="animation-delay:25.90s"></i><i class="cell on" style="animation-delay:25.93s"></i><i class="cell on" style="animation-delay:25.96s"></i><i class="cell on" style="animation-delay:25.99s"></i><i class="cell on" style="animation-delay:26.02s"></i><i class="cell on" style="animation-delay:26.05s"></i><i class="cell on" style="animation-delay:26.08s"></i><i class="cell on" style="animation-delay:26.11s"></i><i class="cell on" style="animation-delay:26.14s"></i><i class="cell on" style="animation-delay:26.17s"></i><i class="cell on" style="animation-delay:26.20s"></i><i class="cell on" style="animation-delay:26.23s"></i><i class="cell on" style="animation-delay:26.26s"></i><i class="cell on" style="animation-delay:26.29s"></i><i class="cell on" style="animation-delay:26.32s"></i><i class="cell" style="animation-delay:26.35s"></i><i class="cell" style="animation-delay:26.38s"></i><i class="cell" style="animation-delay:26.41s"></i><i class="cell" style="animation-delay:26.44s"></i><i class="cell" style="animation-delay:26.47s"></i><i class="cell" style="animation-delay:26.50s"></i><i class="cell" style="animation-delay:26.53s"></i><i class="cell" style="animation-delay:26.56s"></i><i class="cell" style="animation-delay:26.59s"></i><i class="cell" style="animation-delay:26.62s"></i></div>
+  <div class="say">no tienen un sitio web utilizable.</div>
+  <div class="fine">23 de las 40 no tienen ningún sitio. Dato completo: las 40 fueron revisadas.</div>
+</section>
+
+<!-- 6 · la pregunta -->
+<section class="beat " style="--d:5.40s;animation-delay:28.70s">
+  <div class="lbl">La cuenta que nadie hace</div>
+  <div class="q">
+    <span class="qline" style="animation-delay:29.05s">¿Cuántos pacientes</span>
+    <span class="qline" style="animation-delay:29.40s">te daría contestar</span>
+    <span class="qline" style="animation-delay:29.75s"><em>en la primera hora</em>?<span class="caret" style="animation-delay:29.75s"></span></span>
+  </div>
+  <div class="steps">
+    <div style="animation-delay:30.90s">Abre tu WhatsApp.</div>
+    <div style="animation-delay:31.40s">Cuenta los mensajes que entraron después de las 6 de la tarde.</div>
+    <div style="animation-delay:31.90s">Mira a qué hora los contestaste.</div>
+  </div>
+  <div class="fine">Ese número no está en nuestra hoja. Está en tu teléfono.</div>
+</section>
+
+<!-- 7 · CTA -->
+<section class="beat cta" style="--d:4.40s;animation-delay:34.10s">
+  <img src="mark-cream.png" alt="Meridian">
+  <div class="big">Si estás viendo esto, es muy probable que <em>tengas el mismo problema</em>.</div>
+  <div class="follow">Síguenos y aprende a arreglarlo.</div>
+</section>
+
+</body></html>
