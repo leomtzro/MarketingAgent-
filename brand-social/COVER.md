@@ -5,32 +5,36 @@ Sube una de estas a **1640×856**:
 | Archivo | Fondo |
 |---|---|
 | `cover-e2-1640.png` | **Recomendada.** Granate (#9B2226), tipografía crema. |
-| `cover-e1-1640.png` | Crema (#F7F4F0), tipografía tinta. Es el fondo de toda nuestra colateral. |
-| `cover-e3-1640.png` | Tinta (#17181A). Se ve bien pero vuelve a leerse corporativo. |
+| `cover-e1-1640.png` | Crema (#F7F4F0), tipografía tinta. |
 
 Las versiones sin `-1640` son las mismas a 2× (3280×1712).
 
-## Qué dice y por qué
+## El candado tipográfico
 
 ```
-MERIDIAN · TIJUANA
-Más pacientes.
-Mejores pacientes.
-Pacientes nuevos.
-Marketing para clínicas excepcionales.
+Más     ⎤
+Mejores ⎥  Pacientes
+Nuevos  ⎦
 ```
 
-More / Better / New, que es la oferta, no el método.
-El estudio de las 40 clínicas **no va aquí**: eso es cómo encontramos y
-diagnosticamos clientes, no lo que el dueño de la clínica compra.
-Vive en el reel, en los PDFs y en el primer mensaje, no en el escaparate.
+Una sola palabra a la derecha, tres a la izquierda: se leen las tres frases
+—más pacientes, mejores pacientes, pacientes nuevos— sin repetir "pacientes"
+tres veces. More / Better / New, que es la oferta.
 
-## Por qué tipografía y no foto
+El estudio de las 40 clínicas **no va aquí**. Eso es cómo encontramos y
+diagnosticamos a un prospecto, no lo que el dueño de la clínica compra.
+Vive en el reel, en los PDFs y en el primer mensaje.
 
-Todo lo demás que hemos hecho —el reel, los 16 carruseles, los dos PDFs, los
-correos— es tipografía sobre crema con un solo rojo. Una foto de arquitectura
-rompía ese sistema y además se veía a stock corporativo. El skyline es el
-nuestro (`skyline.svg`), dibujado para la marca, no generado.
+## El fondo
+
+`citygrid.svg` — una trama urbana vista desde arriba, tipo mapa, sin etiquetas:
+manzanas irregulares, dos avenidas diagonales y el canal del río cruzando.
+Está **dibujada por nosotros**, generada con `citygrid.py`, no es una captura de
+ningún mapa ni una imagen generada por IA. Evoca una ciudad fronteriza; no es
+un plano literal de Tijuana y no conviene presentarlo como tal.
+
+Usa `currentColor`, así que se recolorea solo según la variante. El degradado
+(`.wash`) apaga la trama bajo el texto y la deja viva a la derecha.
 
 ## Cómo recorta Facebook
 
@@ -45,9 +49,7 @@ termina justo arriba de donde empieza la foto de perfil.
 
 ## Reconstruir
 ```
-node shoottype.mjs guides   # con guías -> /tmp/t-e1.png, t-e2.png, t-e3.png
-node shoottype.mjs          # limpio   -> cover-e1.png, cover-e2.png, cover-e3.png
+python3 citygrid.py          # vuelve a dibujar el mapa (otra semilla, otra ciudad)
+node shoottype.mjs guides    # con guías -> /tmp/t-e1.png, /tmp/t-e2.png
+node shoottype.mjs           # limpio   -> cover-e1.png, cover-e2.png
 ```
-Los fondos generados con ElevenLabs quedaron en `bg-fachada.png` y
-`bg-distrito.png` por si sirven para otra cosa. No son fotos reales de Tijuana
-ni de ninguna clínica.
