@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d1d1f;--muted:#67676c;--accent:#9b2226;--cream:#f7f4f0;--L:96px;--T:34.5s}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden}
+body{background:#f2f0ec;color:var(--ink);font-family:"Inter",system-ui,sans-serif;
+ -webkit-font-smoothing:antialiased;font-feature-settings:"ss01","tnum"}
+
+/* ---------- marble ground ---------- */
+.ground{position:absolute;inset:0;background:url(art/marble.png) center/cover no-repeat;z-index:0}
+.ground::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,
+  rgba(255,255,255,.30) 0%,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 68%,rgba(247,244,240,.55) 100%)}
+
+/* ---------- chrome ---------- */
+.rail{position:absolute;top:0;left:0;height:6px;width:100%;background:rgba(29,29,31,.07);z-index:40}
+.rail i{display:block;height:100%;background:var(--accent);width:0;animation:fill var(--T) linear forwards}
+@keyframes fill{to{width:100%}}
+.mark{position:absolute;top:74px;left:var(--L);height:52px;z-index:30;opacity:.85;
+  animation:markOut var(--T) linear both}
+@keyframes markOut{0%,71%{opacity:.85}74%,100%{opacity:0}}
+
+/* ---------- scene shell ---------- */
+.sc{position:absolute;inset:0;z-index:10;opacity:0;animation:sc var(--d) both}
+@keyframes sc{0%{opacity:0}4%{opacity:1}94%{opacity:1}100%{opacity:0}}
+
+/* ---------- captions ---------- */
+.cap{position:absolute;left:var(--L);right:var(--L);bottom:150px;z-index:25}
+.cap p{font-family:"Fraunces",Georgia,serif;font-variation-settings:'SOFT' 0,'WONK' 0;
+  font-size:62px;line-height:1.16;font-weight:600;letter-spacing:-.02em;
+  opacity:0;transform:translateY(16px);animation:capIn .62s cubic-bezier(.2,.8,.2,1) both}
+.cap p em{font-style:normal;color:var(--accent)}
+@keyframes capIn{to{opacity:1;transform:none}}
+.scrim{position:absolute;left:0;right:0;bottom:0;height:620px;z-index:20;
+  background:linear-gradient(180deg,rgba(247,244,240,0) 0%,rgba(247,244,240,.86) 42%,rgba(247,244,240,.97) 100%)}
+
+/* ================= A — the body ================= */
+.fig{position:absolute;left:60px;top:150px;width:960px;
+  animation:kb 6.2s linear both;animation-delay:0s}
+@keyframes kb{from{transform:scale(1.005)}to{transform:scale(1.055)}}
+.glow{position:absolute;left:300px;top:560px;width:480px;height:420px;z-index:12;
+  background:radial-gradient(ellipse at center,rgba(155,34,38,.46) 0%,rgba(155,34,38,.22) 38%,rgba(155,34,38,0) 70%);
+  filter:blur(26px);opacity:0;animation:ache 6.2s ease-in-out both;animation-delay:.2s}
+@keyframes ache{0%{opacity:0;transform:scale(.86)}
+  22%{opacity:1;transform:scale(1)}46%{opacity:.40;transform:scale(.95)}
+  68%{opacity:.95;transform:scale(1.02)}100%{opacity:.30;transform:scale(1)}}
+
+/* ================= B — los resultados ================= */
+.ui{position:absolute;left:52px;top:238px;width:976px;border-radius:30px;z-index:12;
+  background:url(art/tile.png) center/cover,#fff;
+  box-shadow:0 26px 70px rgba(29,29,31,.13),0 2px 0 rgba(255,255,255,.9) inset;
+  overflow:hidden}
+.ui::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.88)}
+.ui>*{position:relative}
+.sbar{display:flex;align-items:center;gap:18px;padding:30px 34px;border-bottom:1px solid rgba(29,29,31,.09)}
+.mag{width:26px;height:26px;border:3px solid var(--muted);border-radius:50%;position:relative;flex:none}
+.mag::after{content:"";position:absolute;right:-9px;bottom:-5px;width:12px;height:3px;
+  background:var(--muted);transform:rotate(45deg)}
+.sbar span{font-size:30px;color:var(--ink);font-weight:500}
+.sbar b{width:2px;height:30px;background:var(--accent);margin-left:2px;animation:car 1s steps(1) infinite both;animation-delay:6.2s}
+@keyframes car{50%{opacity:0}}
+.row{display:flex;gap:26px;padding:28px 34px;border-bottom:1px solid rgba(29,29,31,.07);
+  opacity:0;transform:translateY(22px);animation:rowIn .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rowIn{to{opacity:1;transform:none}}
+.row:last-child{border-bottom:0}
+.av{width:104px;height:104px;border-radius:14px;flex:none;
+  background:url(art/tile.png) center/cover;box-shadow:0 0 0 1px rgba(29,29,31,.08) inset}
+.rb{flex:1;min-width:0}
+.rn{font-size:33px;font-weight:600;letter-spacing:-.01em;margin-bottom:7px}
+.rr{display:flex;align-items:center;gap:9px;font-size:27px;color:var(--muted);margin-bottom:7px}
+.rr strong{color:var(--ink);font-weight:600}
+.st{letter-spacing:1px;font-size:25px;color:#c8a21f}
+.rt{font-size:25px;color:var(--muted);line-height:1.4}
+.pill{display:inline-block;margin-top:13px;margin-right:11px;padding:9px 22px;border-radius:999px;
+  border:1px solid rgba(29,29,31,.2);font-size:23px;color:var(--ink);font-weight:500}
+
+/* ================= C — los perfiles ================= */
+.win{position:absolute;left:52px;top:200px;width:976px;height:1180px;border-radius:30px;z-index:12;
+  background:#fff;overflow:hidden;box-shadow:0 26px 70px rgba(29,29,31,.13)}
+.col{position:absolute;left:0;top:0;width:100%;animation:scroll 4.2s cubic-bezier(.33,0,.2,1) both;animation-delay:13.9s}
+@keyframes scroll{0%{transform:translateY(0)}48%{transform:translateY(-1010px)}
+  66%{transform:translateY(-1010px)}100%{transform:translateY(0)}}
+.pf{padding:34px 34px 30px;border-bottom:1px solid rgba(29,29,31,.09);position:relative}
+.ph{display:flex;align-items:center;gap:26px;margin-bottom:22px}
+.pa{width:118px;height:118px;border-radius:50%;flex:none;background:url(art/tile.png) center/cover;
+  box-shadow:0 0 0 1px rgba(29,29,31,.1) inset}
+.pu{font-size:32px;font-weight:600;margin-bottom:6px}
+.pm{font-size:25px;color:var(--muted)}
+.ps{display:flex;gap:44px;margin:0 0 18px 144px}
+.ps div{font-size:25px;color:var(--muted)}
+.ps b{display:block;font-size:31px;color:var(--ink);font-weight:600}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.pg i{aspect-ratio:1;background:url(art/tile.png) center/cover;filter:brightness(.90) contrast(1.15);
+  box-shadow:inset 0 0 0 1px rgba(29,29,31,.07)}
+.pg i:nth-child(3n+1){filter:brightness(.86) contrast(1.2)}
+.pg i:nth-child(3n+2){filter:brightness(.95) contrast(1.08)}
+.pg i:nth-child(4n){background-position:70% 30%}
+.pg i:nth-child(5n){background-position:20% 80%}
+.pg i.e{background:rgba(29,29,31,.045);filter:none;box-shadow:inset 0 0 0 1px rgba(29,29,31,.05)}
+/* the tap */
+.tap{position:absolute;left:300px;top:286px;width:150px;height:150px;border-radius:50%;z-index:18;
+  border:4px solid var(--accent);opacity:0;animation:tapRing .9s ease-out both;animation-delay:18.6s}
+@keyframes tapRing{0%{opacity:0;transform:scale(.3)}30%{opacity:.95}100%{opacity:0;transform:scale(1.5)}}
+.chosen{position:absolute;inset:0;z-index:14;background:var(--accent);
+  opacity:0;animation:pick 2.2s cubic-bezier(.2,.8,.2,1) both;animation-delay:19.1s;mix-blend-mode:multiply}
+@keyframes pick{0%{opacity:0}26%{opacity:.93}100%{opacity:.93}}
+
+/* ================= D — el que no eligieron ================= */
+.zoom{position:absolute;left:52px;top:356px;width:976px;border-radius:30px;z-index:12;background:#fff;
+  overflow:hidden;box-shadow:0 30px 80px rgba(29,29,31,.17);
+  animation:push 4.2s cubic-bezier(.22,.7,.25,1) both;animation-delay:21.3s;transform-origin:50% 42%}
+@keyframes push{from{transform:scale(.46);opacity:.25}20%{opacity:1}to{transform:scale(1.06)}}
+.zb{position:absolute;inset:0;z-index:11;background:rgba(29,29,31,.07);
+  animation:dim 4.2s ease both;animation-delay:21.3s}
+@keyframes dim{from{opacity:0}30%{opacity:1}to{opacity:1}}
+
+/* ================= E — la tarjeta ================= */
+.red{position:absolute;inset:0;z-index:15;background:var(--accent);color:var(--cream);
+  display:flex;flex-direction:column;justify-content:center;padding:0 var(--L);
+  animation:sc var(--d) both}
+.red::before{content:"";position:absolute;inset:0;background:url(art/marble.png) center/cover;
+  opacity:.14;mix-blend-mode:overlay}
+.red>*{position:relative}
+.rl{font-family:"Fraunces",Georgia,serif;font-variation-settings:'SOFT' 0,'WONK' 0;
+  font-size:76px;line-height:1.14;font-weight:600;letter-spacing:-.022em;
+  opacity:0;transform:translateY(20px);animation:capIn .7s cubic-bezier(.2,.8,.2,1) both}
+.rl.s{font-size:58px;font-weight:500;opacity:.92;margin-top:34px}
+.cta{margin-top:84px;opacity:0;transform:translateY(16px);animation:capIn .6s cubic-bezier(.2,.8,.2,1) both;
+  animation-delay:32.2s}
+.cta b{display:block;font-size:52px;font-weight:600;letter-spacing:-.01em;margin-bottom:18px}
+.cta span{font-size:34px;letter-spacing:.04em;opacity:.8}
+.rmark{position:absolute;bottom:120px;left:var(--L);height:52px;opacity:0;
+  animation:capIn .6s ease both;animation-delay:32.6s;z-index:3}
+</style></head><body>
+
+<div class="ground"></div>
+<div class="rail"><i></i></div>
+<img class="mark" src="art/mark.png" alt="">
+
+<!-- ============ A · 0.00–6.20 ============ -->
+<section class="sc" style="--d:6.2s;animation-delay:0s">
+  <img class="fig" src="art/figure.png" alt="">
+  <div class="glow"></div>
+  <div class="scrim"></div>
+  <div class="cap">
+    <p style="animation-delay:.30s">Algo te duele<br>y no sabes <em>qué es</em>.</p>
+    <p style="animation-delay:3.30s;margin-top:26px;font-size:50px;font-weight:500;opacity:0">Así que haces lo que todos: lo buscas.</p>
+  </div>
+</section>
+
+<!-- ============ B · 6.20–13.60 ============ -->
+<section class="sc" style="--d:7.4s;animation-delay:6.2s">
+  <div class="ui">
+    <div class="sbar"><div class="mag"></div><span>especialista cerca de mí</span><b></b></div>
+    <div class="row" style="animation-delay:6.50s"><div class="av"></div><div class="rb">
+      <div class="rn">Clínica Vandel</div>
+      <div class="rr"><strong>4.9</strong><span class="st">★★★★★</span><span>(312)</span></div>
+      <div class="rt">Consultorio médico · Zona Río</div>
+      <span class="pill">Sitio web</span><span class="pill">Cómo llegar</span></div></div>
+    <div class="row" style="animation-delay:6.74s"><div class="av"></div><div class="rb">
+      <div class="rn">Centro Médico Arquen</div>
+      <div class="rr"><strong>4.8</strong><span class="st">★★★★★</span><span>(268)</span></div>
+      <div class="rt">Consultorio médico · Agua Caliente</div>
+      <span class="pill">Sitio web</span><span class="pill">Cómo llegar</span></div></div>
+    <div class="row" style="animation-delay:6.98s"><div class="av"></div><div class="rb">
+      <div class="rn">Clínica Ortessa</div>
+      <div class="rr"><strong>5.0</strong><span class="st">★★★★★</span><span>(47)</span></div>
+      <div class="rt">Consultorio médico · Chapultepec</div>
+      <span class="pill">Cómo llegar</span></div></div>
+    <div class="row" style="animation-delay:7.22s"><div class="av"></div><div class="rb">
+      <div class="rn">Grupo Médico Nerval</div>
+      <div class="rr"><strong>4.7</strong><span class="st">★★★★★</span><span>(23)</span></div>
+      <div class="rt">Consultorio médico · Otay</div>
+      <span class="pill">Cómo llegar</span></div></div>
+    <div class="row" style="animation-delay:7.46s"><div class="av"></div><div class="rb">
+      <div class="rn">Clínica Lumbre</div>
+      <div class="rr"><strong>4.9</strong><span class="st">★★★★★</span><span>(9)</span></div>
+      <div class="rt">Consultorio médico · La Mesa</div>
+      <span class="pill">Cómo llegar</span></div></div>
+  </div>
+  <div class="scrim"></div>
+  <div class="cap"><p style="animation-delay:6.50s;font-size:54px">Encuentras <em>cinco</em>.</p>
+    <p style="animation-delay:9.20s;margin-top:20px;font-size:44px;font-weight:500;color:#67676c">Reseñas. Posts. Sitio web.</p></div>
+</section>
+
+<!-- ============ C · 13.60–21.30 ============ -->
+<section class="sc" style="--d:7.7s;animation-delay:13.6s">
+  <div class="win">
+    <div class="col">
+      <div class="pf"><div class="chosen"></div>
+        <div class="ph"><div class="pa"></div><div><div class="pu">clinicavandel</div><div class="pm">Clínica Vandel · Zona Río</div></div></div>
+        <div class="ps"><div><b>418</b>publicaciones</div><div><b>12.4k</b>seguidores</div><div><b>390</b>siguiendo</div></div>
+        <div class="pg"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="pf">
+        <div class="ph"><div class="pa"></div><div><div class="pu">cmarquen</div><div class="pm">Centro Médico Arquen</div></div></div>
+        <div class="ps"><div><b>305</b>publicaciones</div><div><b>8.910</b>seguidores</div><div><b>412</b>siguiendo</div></div>
+        <div class="pg"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="pf">
+        <div class="ph"><div class="pa"></div><div><div class="pu">ortessaclinica</div><div class="pm">Clínica Ortessa</div></div></div>
+        <div class="ps"><div><b>18</b>publicaciones</div><div><b>312</b>seguidores</div><div><b>196</b>siguiendo</div></div>
+        <div class="pg"><i></i><i></i><i class="e"></i><i class="e"></i><i class="e"></i><i class="e"></i><i class="e"></i><i class="e"></i><i class="e"></i></div></div>
+    </div>
+    <div class="tap"></div>
+  </div>
+  <div class="scrim"></div>
+  <div class="cap"><p style="animation-delay:13.90s;font-size:52px">Y eliges al que <em>más veces apareció</em>.</p>
+    <p style="animation-delay:17.60s;margin-top:20px;font-size:43px;font-weight:500;color:#67676c">Los otros podrían ser mejores.<br>Pero no tenías cómo saberlo.</p></div>
+</section>
+
+<!-- ============ D · 21.30–25.50 ============ -->
+<section class="sc" style="--d:4.2s;animation-delay:21.3s">
+  <div class="zb"></div>
+  <div class="zoom">
+    <div class="pf" style="padding:44px 44px 40px">
+      <div class="ph"><div class="pa"></div><div><div class="pu">ortessaclinica</div><div class="pm">Clínica Ortessa · 5.0 ★ (47)</div></div></div>
+      <div style="font-size:26px;color:#67676c;line-height:1.45;margin:0 0 22px 144px">
+        Medicina interna · Chapultepec<br>Lun a Vie 9:00–18:00</div>
+      <div class="ps"><div><b>18</b>publicaciones</div><div><b>312</b>seguidores</div><div><b>196</b>siguiendo</div></div>
+      <div class="pg"><i></i><i></i><i class="e"></i><i class="e"></i><i class="e"></i><i class="e"></i><i class="e"></i><i class="e"></i><i class="e"></i></div></div>
+  </div>
+  <div class="scrim"></div>
+  <div class="cap"><p style="animation-delay:21.60s;font-size:56px">Si estás viendo esto,<br>tú eres <em>uno de los cinco</em>.</p></div>
+</section>
+
+<!-- ============ E · 25.50–34.50 ============ -->
+<section class="red" style="--d:9s;animation-delay:25.5s">
+  <div class="rl" style="animation-delay:25.80s">El paciente nunca supo<br>que existías.</div>
+  <div class="rl s" style="animation-delay:28.60s">No por tu experiencia.<br>Por tu falta de marketing.</div>
+  <div class="cta"><b>Mándanos un mensaje.</b><span>@_meridianmarketing</span></div>
+  <img class="rmark" src="art/mark-cream.png" alt="">
+</section>
+
+</body></html>
