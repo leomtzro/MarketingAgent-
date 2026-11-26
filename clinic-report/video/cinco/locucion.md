@@ -1,43 +1,45 @@
-# Locución — Reel "Los cinco perfiles" · Meridian
+# Locución — Reel "Doctor" · Meridian
 
-34.5 s · 1080×1920 · 25 fps · H.264 + AAC · español neutro
+29.96 s · 1080×1920 · 25 fps · H.264 + AAC · español neutro, **trato de usted**
 Voz **Nicole — Español Neutro, Narrativa** `ji5tAyfeTqxJsvOg94Jf` · modelo `eleven_v4`
-Audio normalizado a −16 LUFS / pico −1.5 dB.
+Audio recortado de silencios, normalizado a −16 LUFS / pico −1.5 dB.
 
 ## Guion y tiempos
 
 | # | Entra | Dur | Escena | Línea |
 |---|-------|-----|--------|-------|
-| 1 | 0.30 | 5.49 | A · figura de mármol, brillo rojo difuso | Algo te duele y no sabes qué es. Así que haces lo que todos: lo buscas. |
-| 2 | 6.50 | 6.69 | B · resultados de búsqueda, cinco clínicas | Encuentras cinco. Te mueves de perfil en perfil. Reseñas. Posts. Sitio web. |
-| 3 | 13.90 | 7.00 | C · scroll de perfiles, toque, encendido | Y eliges al que más veces apareció. Porque los otros podrían ser mejores. Pero no tenías cómo saberlo. |
-| 4 | 21.60 | 3.47 | D · zoom al perfil no elegido | Si estás viendo esto, tú eres uno de los cinco. |
-| 5 | 25.80 | 6.11 | E · tarjeta roja | El paciente nunca supo que existías. No por tu experiencia. Por tu falta de marketing. |
-| 6 | 32.30 | 1.41 | E · cierre | Mándanos un mensaje. |
+| 1 | 0.25 | 4.13 | A · figura de mármol, dolor difuso | Doctor, a un paciente algo le duele y no sabe qué es. |
+| 2 | 4.60 | 4.02 | B · cinco resultados con años de experiencia | Hace lo que todos: busca. Encuentra cinco opciones. |
+| 3 | 8.85 | 4.60 | C · scroll de perfiles | Se mueve de perfil en perfil. Reseñas, posts, sitio web. |
+| 4 | 13.70 | 4.41 | D · mensaje enviado, sin respuesta | Le escribe al de más experiencia. Pero tarda mucho en contestar. |
+| 5 | 18.35 | 2.27 | E · el otro contesta, se enciende rojo | Así que se va con el que contestó primero. |
+| 6 | 21.00 | 5.25 | F · tarjeta roja | El paciente se fue con alguien de menos experiencia. Esto pasa más seguido de lo que cree. |
+| 7 | 26.50 | 3.11 | F · cierre | Mándenos un mensaje para que esto deje de pasar. |
 
-Escenas: A 0.00–6.20 · B 6.20–13.60 · C 13.60–21.30 · D 21.30–25.50 · E 25.50–34.50
+Escenas: A 0.00–4.55 · B 4.55–8.78 · C 8.78–13.62 · D 13.62–18.30 · E 18.30–20.90 · F 20.90–29.95
+Habla: 27.79 s. Cola después de la última palabra: 0.35 s.
 
 ## Reglas que gobiernan esta pieza
 
-- **Ninguna clínica real aparece.** Los cinco perfiles son nombres acuñados —
-  Vandel, Arquen, Ortessa, Nerval, Lumbre — verificados por búsqueda como
-  inexistentes en Tijuana. Las cifras de reseñas, publicaciones y seguidores
-  son inventadas e ilustrativas; no son datos de nuestro estudio.
-- **"Uno de los cinco" es literal:** en pantalla se muestran exactamente cinco
-  resultados. Si se edita el número en el guion, hay que editarlo en la escena B.
-- **Las interfaces son copia cercana sin nombres.** No aparece ningún logotipo,
-  marca ni nombre de plataforma. Decisión de Leo, con el riesgo de revisión
-  publicitaria de Meta explicado y aceptado.
-- El perfil al que se hace zoom (Ortessa) **se ve bien** —5.0 de calificación—
-  pero con 18 publicaciones. Ese contraste es el argumento entero del anuncio.
+- **Trato de usted en todo.** "Doctor…", "no sabe", "de lo que cree", "Mándenos".
+  Si se edita una línea, el pronombre no se mueve.
+- **El argumento es tiempo de respuesta**, y eso sí lo medimos: en el estudio de
+  40 clínicas sólo 8 de 35 contestaron dentro de la hora. El anuncio dramatiza
+  ese hallazgo; no cita cifras del estudio en pantalla.
+- **La clínica con más experiencia no es la que más reseñas tiene.** Ortessa:
+  28 años, 5.0, 47 reseñas, 18 publicaciones. Vandel: 9 años, 4.9, 312 reseñas,
+  418 publicaciones. Ese cruce es lo que hace verdadera la línea final.
+- **"Cinco opciones" es literal:** en escena B hay exactamente cinco resultados.
+- **Ninguna clínica real aparece.** Nombres acuñados (Vandel, Arquen, Ortessa,
+  Nerval, Lumbre), verificados como inexistentes en Tijuana. Reseñas, años,
+  seguidores y los dos mensajes son inventados e ilustrativos.
+- **Las interfaces son copia cercana sin nombres.** Ningún logotipo ni marca de
+  plataforma. Decisión de Leo, con el riesgo de revisión de Meta explicado.
 
 ## Piezas
 
-- `reel.html` — las cinco escenas, animación pausable por fotograma
-- `shoot.mjs` — captura 863 fotogramas · `stills.mjs` — stills de revisión
-- `art/figure-raw.png` — relieve generado (ElevenLabs, `bytedance-seedream-5.5`)
+- `reel.html` · `shoot.mjs` (749 fotogramas) · `stills.mjs`
+- `art/figure-raw.png` — relieve generado (`bytedance-seedream-5.5`)
 - `art/figure.png` `art/marble.png` `art/tile.png` — recortes derivados
-- `vo/vo1..vo6.mp3` + `vo-345.m4a` — locución y pista montada
-- `Meridian-Reel-Cinco-Perfiles.mp4` — master 9:16
-
-Créditos ElevenLabs gastados en esta pieza: **880** (98 imagen + 782 voz).
+- `vo/vo1..vo7.mp3` + `vo-2995.m4a`
+- `Meridian-Reel-Doctor.mp4` — master 9:16
