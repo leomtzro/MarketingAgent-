@@ -1,6 +1,7 @@
-# Vendored skill payloads. Reproduce with:
-#   npx skills add Leonxlnx/taste-skill
-# The exact commit and content hash are pinned in skills-lock.json.
+# Vendored skill payloads. Restore every pinned skill with:
+#   npx skills install -a claude-code
+# Sources: Leonxlnx/taste-skill and coreyhaines31/marketingskills (MIT, 53 skills).
+# Exact commits and content hashes are pinned in skills-lock.json.
 .agents/
 .claude/skills/
 
